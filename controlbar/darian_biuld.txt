@@ -1,0 +1,39 @@
+Chasis
+http://www.newegg.com/Product/Product.aspx?Item=N82E16811517004
+$130 - 20rebate = 110
+
+Motherboard
+http://www.newegg.com/Product/Product.aspx?Item=N82E16813128514
+130$
+
+CPU
+http://www.newegg.com/Product/Product.aspx?Item=N82E16819113284
+$180
+
+RAM
+http://www.newegg.com/Product/Product.aspx?Item=N82E16820231428
+$64
+
+HDD
+http://www.newegg.com/Product/Product.aspx?Item=9SIA5AD2710172
+$70
+
+GPU
+http://www.newegg.com/Product/Product.aspx?Item=N82E16814487079
+$560 - 10rebate = 550
+
+CD Drive
+http://www.newegg.com/Product/Product.aspx?Item=N82E16827135204
+$20
+
+PSU
+http://www.newegg.com/Product/Product.aspx?Item=N82E16817190033
+$125 - 25rebate = 100
+
+WiFi Card
+http://www.newegg.com/Product/Product.aspx?Item=N82E16833704133
+$37
+
+SUM(TOTAL) =       1316
+	   -   55rebate
+	=          1261

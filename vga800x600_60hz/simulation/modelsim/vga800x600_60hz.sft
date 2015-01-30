@@ -1,0 +1,5 @@
+set tool_name "ModelSim (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {vga800x600_60hz.vo vga800x600_60hz_v.sdo}}
+	{{"Fast Model"} {vga800x600_60hz_fast.vo vga800x600_60hz_v_fast.sdo}}
+}

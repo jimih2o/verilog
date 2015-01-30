@@ -1,0 +1,14 @@
+
+State Machine - |controlbar|barState
+Name barState.STATE_WAIT barState.STATE_DEC barState.STATE_INC barState.STATE_NONE 
+barState.STATE_NONE 0 0 0 0 
+barState.STATE_INC 0 0 1 1 
+barState.STATE_DEC 0 1 0 1 
+barState.STATE_WAIT 1 0 0 1 
+
+State Machine - |controlbar|barPrevState
+Name barPrevState.STATE_WAIT barPrevState.STATE_DEC barPrevState.STATE_INC barPrevState.STATE_NONE 
+barPrevState.STATE_NONE 0 0 0 0 
+barPrevState.STATE_INC 0 0 1 1 
+barPrevState.STATE_DEC 0 1 0 1 
+barPrevState.STATE_WAIT 1 0 0 1 

@@ -1,0 +1,1137 @@
+TimeQuest Timing Analyzer report for controlbar
+Mon Jan 19 12:47:06 2015
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'CLOCK_50'
+ 12. Slow Model Hold: 'CLOCK_50'
+ 13. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'CLOCK_50'
+ 24. Fast Model Hold: 'CLOCK_50'
+ 25. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; controlbar                                         ;
+; Device Family      ; Cyclone II                                         ;
+; Device Name        ; EP2C20F484C7                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK_50   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 126.86 MHz ; 126.86 MHz      ; CLOCK_50   ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------+
+; Slow Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -6.883 ; -171.786      ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.445 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.631 ; -60.287            ;
++----------+--------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                       ;
++--------+---------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node     ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -6.883 ; waitTimer[6]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.916      ;
+; -6.883 ; waitTimer[6]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.916      ;
+; -6.808 ; waitTimer[0]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.843      ;
+; -6.808 ; waitTimer[0]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.843      ;
+; -6.731 ; waitTimer[1]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.766      ;
+; -6.731 ; waitTimer[1]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.766      ;
+; -6.656 ; waitTimer[2]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.691      ;
+; -6.656 ; waitTimer[2]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.691      ;
+; -6.613 ; waitTimer[3]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.648      ;
+; -6.613 ; waitTimer[3]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.648      ;
+; -6.497 ; waitTimer[4]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.532      ;
+; -6.497 ; waitTimer[4]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.532      ;
+; -6.453 ; waitTimer[5]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.488      ;
+; -6.453 ; waitTimer[5]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.488      ;
+; -6.435 ; waitTimer[11] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.468      ;
+; -6.435 ; waitTimer[11] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.468      ;
+; -6.357 ; waitTimer[6]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 7.391      ;
+; -6.320 ; waitTimer[12] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.353      ;
+; -6.320 ; waitTimer[12] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.353      ;
+; -6.282 ; waitTimer[0]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 7.318      ;
+; -6.264 ; waitTimer[7]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.299      ;
+; -6.264 ; waitTimer[7]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.299      ;
+; -6.218 ; waitTimer[13] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.251      ;
+; -6.218 ; waitTimer[13] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.251      ;
+; -6.205 ; waitTimer[1]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 7.241      ;
+; -6.161 ; waitTimer[14] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.194      ;
+; -6.161 ; waitTimer[14] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 7.194      ;
+; -6.130 ; waitTimer[2]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 7.166      ;
+; -6.118 ; waitTimer[8]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.153      ;
+; -6.118 ; waitTimer[8]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.153      ;
+; -6.087 ; waitTimer[3]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 7.123      ;
+; -5.998 ; waitTimer[9]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.033      ;
+; -5.998 ; waitTimer[9]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 7.033      ;
+; -5.971 ; waitTimer[4]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 7.007      ;
+; -5.958 ; waitTimer[10] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.993      ;
+; -5.958 ; waitTimer[10] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.993      ;
+; -5.927 ; waitTimer[5]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.963      ;
+; -5.909 ; waitTimer[11] ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.943      ;
+; -5.795 ; waitTimer[6]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.833      ;
+; -5.795 ; waitTimer[6]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.833      ;
+; -5.794 ; waitTimer[6]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.832      ;
+; -5.794 ; waitTimer[6]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.832      ;
+; -5.794 ; waitTimer[12] ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.828      ;
+; -5.791 ; waitTimer[6]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.829      ;
+; -5.789 ; waitTimer[6]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.827      ;
+; -5.787 ; waitTimer[6]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.825      ;
+; -5.787 ; waitTimer[6]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.825      ;
+; -5.784 ; waitTimer[6]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.822      ;
+; -5.780 ; waitTimer[6]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 6.818      ;
+; -5.738 ; waitTimer[7]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.774      ;
+; -5.720 ; waitTimer[0]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.760      ;
+; -5.720 ; waitTimer[0]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.760      ;
+; -5.719 ; waitTimer[0]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.759      ;
+; -5.719 ; waitTimer[0]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.759      ;
+; -5.716 ; waitTimer[0]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.756      ;
+; -5.714 ; waitTimer[0]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.754      ;
+; -5.712 ; waitTimer[0]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.752      ;
+; -5.712 ; waitTimer[0]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.752      ;
+; -5.709 ; waitTimer[0]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.749      ;
+; -5.705 ; waitTimer[0]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.745      ;
+; -5.694 ; waitTimer[6]  ; waitTimer[22]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.728      ;
+; -5.694 ; waitTimer[6]  ; waitTimer[24]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.728      ;
+; -5.692 ; waitTimer[13] ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.726      ;
+; -5.643 ; waitTimer[1]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.683      ;
+; -5.643 ; waitTimer[1]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.683      ;
+; -5.642 ; waitTimer[1]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.682      ;
+; -5.642 ; waitTimer[1]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.682      ;
+; -5.639 ; waitTimer[1]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.679      ;
+; -5.637 ; waitTimer[1]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.677      ;
+; -5.635 ; waitTimer[14] ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 6.669      ;
+; -5.635 ; waitTimer[1]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.675      ;
+; -5.635 ; waitTimer[1]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.675      ;
+; -5.632 ; waitTimer[1]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.672      ;
+; -5.628 ; waitTimer[1]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.668      ;
+; -5.619 ; waitTimer[0]  ; waitTimer[22]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.655      ;
+; -5.619 ; waitTimer[0]  ; waitTimer[24]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.655      ;
+; -5.592 ; waitTimer[8]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.628      ;
+; -5.585 ; waitTimer[16] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 6.618      ;
+; -5.585 ; waitTimer[16] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 6.618      ;
+; -5.568 ; waitTimer[2]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.608      ;
+; -5.568 ; waitTimer[2]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.608      ;
+; -5.567 ; waitTimer[2]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.607      ;
+; -5.567 ; waitTimer[2]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.607      ;
+; -5.564 ; waitTimer[2]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.604      ;
+; -5.562 ; waitTimer[2]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.602      ;
+; -5.560 ; waitTimer[2]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.600      ;
+; -5.560 ; waitTimer[2]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.600      ;
+; -5.557 ; waitTimer[2]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.597      ;
+; -5.553 ; waitTimer[2]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.593      ;
+; -5.542 ; waitTimer[1]  ; waitTimer[22]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.578      ;
+; -5.542 ; waitTimer[1]  ; waitTimer[24]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.002     ; 6.578      ;
+; -5.533 ; waitTimer[15] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.568      ;
+; -5.533 ; waitTimer[15] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.003     ; 6.568      ;
+; -5.525 ; waitTimer[3]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.565      ;
+; -5.525 ; waitTimer[3]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.565      ;
+; -5.524 ; waitTimer[3]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.564      ;
+; -5.524 ; waitTimer[3]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.564      ;
+; -5.521 ; waitTimer[3]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.561      ;
+; -5.519 ; waitTimer[3]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.559      ;
+; -5.517 ; waitTimer[3]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.002      ; 6.557      ;
++--------+---------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                   ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; LEDR[0]~reg0           ; LEDR[0]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; LEDR[9]~reg0           ; LEDR[9]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; barPrevState.STATE_DEC ; barPrevState.STATE_DEC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; barPrevState.STATE_INC ; barPrevState.STATE_INC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.621 ; waitTimer[31]          ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.907      ;
+; 0.624 ; barState.STATE_DEC     ; barPrevState.STATE_DEC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.910      ;
+; 0.662 ; LEDR[0]~reg0           ; LEDR[1]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.948      ;
+; 0.664 ; LEDR[7]~reg0           ; LEDR[6]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.950      ;
+; 0.666 ; LEDR[7]~reg0           ; LEDR[8]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.952      ;
+; 0.668 ; LEDR[3]~reg0           ; LEDR[4]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.954      ;
+; 0.668 ; LEDR[4]~reg0           ; LEDR[3]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.954      ;
+; 0.669 ; LEDR[1]~reg0           ; LEDR[0]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.955      ;
+; 0.670 ; LEDR[1]~reg0           ; LEDR[2]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.956      ;
+; 0.674 ; LEDR[4]~reg0           ; LEDR[5]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.960      ;
+; 0.877 ; LEDR[8]~reg0           ; LEDR[7]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.163      ;
+; 0.919 ; barState.STATE_WAIT    ; barPrevState.STATE_INC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.205      ;
+; 0.960 ; waitTimer[23]          ; waitTimer[23]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.246      ;
+; 0.960 ; waitTimer[15]          ; waitTimer[15]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.246      ;
+; 0.960 ; waitTimer[0]           ; waitTimer[0]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.246      ;
+; 0.963 ; waitTimer[1]           ; waitTimer[1]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.249      ;
+; 0.964 ; waitTimer[9]           ; waitTimer[9]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.250      ;
+; 0.967 ; waitTimer[17]          ; waitTimer[17]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.253      ;
+; 0.968 ; waitTimer[2]           ; waitTimer[2]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.254      ;
+; 0.968 ; waitTimer[25]          ; waitTimer[25]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.254      ;
+; 0.969 ; waitTimer[4]           ; waitTimer[4]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.969 ; waitTimer[27]          ; waitTimer[27]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.969 ; waitTimer[29]          ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.969 ; waitTimer[30]          ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.969 ; waitTimer[7]           ; waitTimer[7]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.255      ;
+; 0.998 ; LEDR[2]~reg0           ; LEDR[1]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.284      ;
+; 0.998 ; LEDR[2]~reg0           ; LEDR[3]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.284      ;
+; 1.003 ; waitTimer[26]          ; waitTimer[26]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.289      ;
+; 1.003 ; waitTimer[10]          ; waitTimer[10]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.289      ;
+; 1.003 ; waitTimer[8]           ; waitTimer[8]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.289      ;
+; 1.004 ; waitTimer[3]           ; waitTimer[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.290      ;
+; 1.004 ; waitTimer[5]           ; waitTimer[5]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.290      ;
+; 1.004 ; waitTimer[28]          ; waitTimer[28]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.290      ;
+; 1.021 ; LEDR[9]~reg0           ; LEDR[8]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.307      ;
+; 1.022 ; LEDR[3]~reg0           ; LEDR[2]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.308      ;
+; 1.023 ; LEDR[5]~reg0           ; LEDR[4]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.309      ;
+; 1.036 ; LEDR[6]~reg0           ; LEDR[7]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.322      ;
+; 1.042 ; LEDR[6]~reg0           ; LEDR[5]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.328      ;
+; 1.057 ; LEDR[5]~reg0           ; LEDR[6]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.343      ;
+; 1.223 ; LEDR[8]~reg0           ; LEDR[9]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.509      ;
+; 1.247 ; barState.STATE_DEC     ; barState.STATE_WAIT    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.532      ;
+; 1.269 ; barState.STATE_WAIT    ; barState.STATE_NONE    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.555      ;
+; 1.298 ; barState.STATE_INC     ; barState.STATE_WAIT    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.583      ;
+; 1.303 ; barState.STATE_INC     ; barPrevState.STATE_INC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; -0.001     ; 1.588      ;
+; 1.392 ; waitTimer[0]           ; waitTimer[1]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.678      ;
+; 1.395 ; waitTimer[1]           ; waitTimer[2]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.681      ;
+; 1.396 ; waitTimer[9]           ; waitTimer[10]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.682      ;
+; 1.400 ; waitTimer[25]          ; waitTimer[26]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.686      ;
+; 1.400 ; waitTimer[2]           ; waitTimer[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.686      ;
+; 1.401 ; waitTimer[30]          ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.687      ;
+; 1.401 ; waitTimer[29]          ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.687      ;
+; 1.401 ; waitTimer[4]           ; waitTimer[5]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.687      ;
+; 1.401 ; waitTimer[27]          ; waitTimer[28]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.687      ;
+; 1.436 ; waitTimer[8]           ; waitTimer[9]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.722      ;
+; 1.436 ; waitTimer[26]          ; waitTimer[27]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.722      ;
+; 1.437 ; waitTimer[3]           ; waitTimer[4]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.723      ;
+; 1.437 ; waitTimer[28]          ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.723      ;
+; 1.472 ; waitTimer[0]           ; waitTimer[2]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.758      ;
+; 1.475 ; waitTimer[1]           ; waitTimer[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.761      ;
+; 1.480 ; waitTimer[25]          ; waitTimer[27]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.766      ;
+; 1.480 ; waitTimer[2]           ; waitTimer[4]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.766      ;
+; 1.481 ; waitTimer[29]          ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.767      ;
+; 1.481 ; waitTimer[27]          ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.767      ;
+; 1.488 ; barState.STATE_NONE    ; barState.STATE_INC     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 1.775      ;
+; 1.495 ; barPrevState.STATE_DEC ; barState.STATE_INC     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.781      ;
+; 1.502 ; waitTimer[7]           ; waitTimer[8]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.788      ;
+; 1.516 ; waitTimer[8]           ; waitTimer[10]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.802      ;
+; 1.516 ; waitTimer[26]          ; waitTimer[28]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.802      ;
+; 1.517 ; waitTimer[5]           ; waitTimer[7]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.803      ;
+; 1.517 ; waitTimer[28]          ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.803      ;
+; 1.517 ; waitTimer[3]           ; waitTimer[5]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.803      ;
+; 1.552 ; waitTimer[0]           ; waitTimer[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.838      ;
+; 1.555 ; waitTimer[1]           ; waitTimer[4]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.841      ;
+; 1.560 ; waitTimer[25]          ; waitTimer[28]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.846      ;
+; 1.560 ; waitTimer[2]           ; waitTimer[5]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.846      ;
+; 1.561 ; waitTimer[4]           ; waitTimer[7]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.847      ;
+; 1.561 ; waitTimer[27]          ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.847      ;
+; 1.570 ; waitTimer[15]          ; waitTimer[17]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.002      ; 1.858      ;
+; 1.573 ; waitTimer[23]          ; waitTimer[25]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.859      ;
+; 1.582 ; waitTimer[7]           ; waitTimer[9]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.868      ;
+; 1.596 ; waitTimer[26]          ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.882      ;
+; 1.597 ; waitTimer[28]          ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.883      ;
+; 1.597 ; waitTimer[24]          ; waitTimer[25]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.004      ; 1.887      ;
+; 1.614 ; barState.STATE_WAIT    ; waitTimer[23]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.905      ;
+; 1.614 ; barState.STATE_WAIT    ; waitTimer[25]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.905      ;
+; 1.614 ; barState.STATE_WAIT    ; waitTimer[26]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.905      ;
+; 1.614 ; barState.STATE_WAIT    ; waitTimer[27]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.905      ;
+; 1.614 ; barState.STATE_WAIT    ; waitTimer[28]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.905      ;
+; 1.614 ; barState.STATE_WAIT    ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.905      ;
+; 1.614 ; barState.STATE_WAIT    ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.905      ;
+; 1.614 ; barState.STATE_WAIT    ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.905      ;
+; 1.614 ; barState.STATE_WAIT    ; waitTimer[17]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.905      ;
+; 1.622 ; waitTimer[16]          ; waitTimer[17]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 1.908      ;
+; 1.628 ; barState.STATE_WAIT    ; waitTimer[20]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.919      ;
+; 1.628 ; barState.STATE_WAIT    ; waitTimer[21]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.919      ;
+; 1.628 ; barState.STATE_WAIT    ; waitTimer[11]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 1.919      ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[0]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[0]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[1]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[1]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[2]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[2]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[3]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[3]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[4]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[4]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[5]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[5]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[6]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[6]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[7]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[7]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[8]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[8]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[9]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[9]~reg0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; barPrevState.STATE_DEC    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barPrevState.STATE_DEC    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; barPrevState.STATE_INC    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barPrevState.STATE_INC    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; barState.STATE_DEC        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barState.STATE_DEC        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; barState.STATE_INC        ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barState.STATE_INC        ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; barState.STATE_NONE       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barState.STATE_NONE       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; barState.STATE_WAIT       ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barState.STATE_WAIT       ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[10]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[10]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[11]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[11]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[12]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[12]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[13]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[13]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[14]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[14]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[15]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[15]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[16]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[16]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[17]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[17]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[18]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[18]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[19]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[19]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[20]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[20]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[21]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[21]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[22]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[22]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[23]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[23]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[24]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[24]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[25]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[25]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[26]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[26]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[27]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[27]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[28]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[28]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[29]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[29]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[30]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[30]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[31]             ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[31]             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[4]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[4]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[5]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[5]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[6]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[6]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[7]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[7]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[8]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[8]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[9]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[9]              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0] ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 8.042 ; 8.042 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 8.042 ; 8.042 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; 7.380 ; 7.380 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -4.632 ; -4.632 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -4.632 ; -4.632 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; -4.718 ; -4.718 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 7.429 ; 7.429 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 6.872 ; 6.872 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 6.836 ; 6.836 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 6.878 ; 6.878 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 7.197 ; 7.197 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 7.043 ; 7.043 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 7.238 ; 7.238 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 7.429 ; 7.429 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 7.033 ; 7.033 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 6.883 ; 6.883 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 6.883 ; 6.883 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 6.836 ; 6.836 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 6.872 ; 6.872 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 6.836 ; 6.836 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 6.878 ; 6.878 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 7.197 ; 7.197 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 7.043 ; 7.043 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 7.238 ; 7.238 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 7.429 ; 7.429 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 7.033 ; 7.033 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 6.883 ; 6.883 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 6.883 ; 6.883 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK_50 ; -2.192 ; -43.052       ;
++----------+--------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; CLOCK_50 ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; CLOCK_50 ; -1.380 ; -49.380            ;
++----------+--------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                       ;
++--------+---------------+---------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node     ; To Node             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------+---------------------+--------------+-------------+--------------+------------+------------+
+; -2.192 ; waitTimer[6]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 3.219      ;
+; -2.192 ; waitTimer[6]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 3.219      ;
+; -2.189 ; waitTimer[0]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.217      ;
+; -2.189 ; waitTimer[0]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.217      ;
+; -2.156 ; waitTimer[1]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.184      ;
+; -2.156 ; waitTimer[1]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.184      ;
+; -2.124 ; waitTimer[2]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.152      ;
+; -2.124 ; waitTimer[2]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.152      ;
+; -2.100 ; waitTimer[3]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.128      ;
+; -2.100 ; waitTimer[3]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.128      ;
+; -2.055 ; waitTimer[4]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.083      ;
+; -2.055 ; waitTimer[4]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.083      ;
+; -2.030 ; waitTimer[5]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.058      ;
+; -2.030 ; waitTimer[5]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 3.058      ;
+; -1.965 ; waitTimer[11] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.992      ;
+; -1.965 ; waitTimer[11] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.992      ;
+; -1.946 ; waitTimer[7]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.974      ;
+; -1.946 ; waitTimer[7]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.974      ;
+; -1.920 ; waitTimer[12] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.947      ;
+; -1.920 ; waitTimer[12] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.947      ;
+; -1.872 ; waitTimer[13] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.899      ;
+; -1.872 ; waitTimer[13] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.899      ;
+; -1.866 ; waitTimer[8]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.894      ;
+; -1.866 ; waitTimer[8]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.894      ;
+; -1.854 ; waitTimer[6]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.881      ;
+; -1.853 ; waitTimer[14] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.880      ;
+; -1.853 ; waitTimer[14] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.880      ;
+; -1.851 ; waitTimer[0]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.879      ;
+; -1.818 ; waitTimer[1]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.846      ;
+; -1.817 ; waitTimer[9]  ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.845      ;
+; -1.817 ; waitTimer[9]  ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.845      ;
+; -1.796 ; waitTimer[10] ; barState.STATE_NONE ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.824      ;
+; -1.796 ; waitTimer[10] ; barState.STATE_WAIT ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.824      ;
+; -1.786 ; waitTimer[2]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.814      ;
+; -1.762 ; waitTimer[6]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.794      ;
+; -1.762 ; waitTimer[6]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.794      ;
+; -1.762 ; waitTimer[6]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.794      ;
+; -1.762 ; waitTimer[3]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.790      ;
+; -1.761 ; waitTimer[6]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.793      ;
+; -1.761 ; waitTimer[6]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.793      ;
+; -1.761 ; waitTimer[6]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.793      ;
+; -1.761 ; waitTimer[6]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.793      ;
+; -1.761 ; waitTimer[6]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.793      ;
+; -1.760 ; waitTimer[6]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.792      ;
+; -1.759 ; waitTimer[0]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.792      ;
+; -1.759 ; waitTimer[0]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.792      ;
+; -1.759 ; waitTimer[0]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.792      ;
+; -1.758 ; waitTimer[6]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.000      ; 2.790      ;
+; -1.758 ; waitTimer[0]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.791      ;
+; -1.758 ; waitTimer[0]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.791      ;
+; -1.758 ; waitTimer[0]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.791      ;
+; -1.758 ; waitTimer[0]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.791      ;
+; -1.758 ; waitTimer[0]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.791      ;
+; -1.757 ; waitTimer[0]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.790      ;
+; -1.755 ; waitTimer[0]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.788      ;
+; -1.726 ; waitTimer[1]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.759      ;
+; -1.726 ; waitTimer[1]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.759      ;
+; -1.726 ; waitTimer[1]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.759      ;
+; -1.725 ; waitTimer[1]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.758      ;
+; -1.725 ; waitTimer[1]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.758      ;
+; -1.725 ; waitTimer[1]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.758      ;
+; -1.725 ; waitTimer[1]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.758      ;
+; -1.725 ; waitTimer[1]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.758      ;
+; -1.724 ; waitTimer[1]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.757      ;
+; -1.722 ; waitTimer[1]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.755      ;
+; -1.717 ; waitTimer[4]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.745      ;
+; -1.694 ; waitTimer[2]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.727      ;
+; -1.694 ; waitTimer[2]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.727      ;
+; -1.694 ; waitTimer[2]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.727      ;
+; -1.693 ; waitTimer[2]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.726      ;
+; -1.693 ; waitTimer[2]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.726      ;
+; -1.693 ; waitTimer[2]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.726      ;
+; -1.693 ; waitTimer[2]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.726      ;
+; -1.693 ; waitTimer[2]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.726      ;
+; -1.692 ; waitTimer[5]  ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.720      ;
+; -1.692 ; waitTimer[2]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.725      ;
+; -1.690 ; waitTimer[2]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.723      ;
+; -1.670 ; waitTimer[3]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.703      ;
+; -1.670 ; waitTimer[3]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.703      ;
+; -1.670 ; waitTimer[3]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.703      ;
+; -1.669 ; waitTimer[3]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.702      ;
+; -1.669 ; waitTimer[3]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.702      ;
+; -1.669 ; waitTimer[3]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.702      ;
+; -1.669 ; waitTimer[3]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.702      ;
+; -1.669 ; waitTimer[3]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.702      ;
+; -1.668 ; waitTimer[3]  ; waitTimer[18]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.701      ;
+; -1.666 ; waitTimer[3]  ; waitTimer[20]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.699      ;
+; -1.660 ; waitTimer[6]  ; waitTimer[22]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.687      ;
+; -1.660 ; waitTimer[6]  ; waitTimer[24]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.687      ;
+; -1.657 ; waitTimer[0]  ; waitTimer[22]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.685      ;
+; -1.657 ; waitTimer[0]  ; waitTimer[24]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.004     ; 2.685      ;
+; -1.627 ; waitTimer[11] ; barState.STATE_INC  ; CLOCK_50     ; CLOCK_50    ; 1.000        ; -0.005     ; 2.654      ;
+; -1.625 ; waitTimer[4]  ; waitTimer[21]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.658      ;
+; -1.625 ; waitTimer[4]  ; waitTimer[11]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.658      ;
+; -1.625 ; waitTimer[4]  ; waitTimer[13]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.658      ;
+; -1.624 ; waitTimer[4]  ; waitTimer[14]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.657      ;
+; -1.624 ; waitTimer[4]  ; waitTimer[12]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.657      ;
+; -1.624 ; waitTimer[4]  ; waitTimer[6]        ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.657      ;
+; -1.624 ; waitTimer[4]  ; waitTimer[16]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.657      ;
+; -1.624 ; waitTimer[4]  ; waitTimer[19]       ; CLOCK_50     ; CLOCK_50    ; 1.000        ; 0.001      ; 2.657      ;
++--------+---------------+---------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                   ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; LEDR[0]~reg0           ; LEDR[0]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; LEDR[9]~reg0           ; LEDR[9]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; barPrevState.STATE_DEC ; barPrevState.STATE_DEC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; barPrevState.STATE_INC ; barPrevState.STATE_INC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.240 ; barState.STATE_DEC     ; barPrevState.STATE_DEC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; waitTimer[31]          ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.393      ;
+; 0.261 ; LEDR[7]~reg0           ; LEDR[6]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.413      ;
+; 0.261 ; LEDR[0]~reg0           ; LEDR[1]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.413      ;
+; 0.262 ; LEDR[7]~reg0           ; LEDR[8]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.414      ;
+; 0.263 ; LEDR[3]~reg0           ; LEDR[4]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.415      ;
+; 0.263 ; LEDR[4]~reg0           ; LEDR[3]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.415      ;
+; 0.266 ; LEDR[1]~reg0           ; LEDR[0]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.418      ;
+; 0.267 ; LEDR[1]~reg0           ; LEDR[2]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.419      ;
+; 0.268 ; LEDR[4]~reg0           ; LEDR[5]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.420      ;
+; 0.332 ; LEDR[8]~reg0           ; LEDR[7]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.484      ;
+; 0.353 ; waitTimer[0]           ; waitTimer[0]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.505      ;
+; 0.354 ; waitTimer[23]          ; waitTimer[23]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.506      ;
+; 0.355 ; waitTimer[1]           ; waitTimer[1]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; waitTimer[9]           ; waitTimer[9]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; waitTimer[15]          ; waitTimer[15]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357 ; waitTimer[17]          ; waitTimer[17]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; waitTimer[2]           ; waitTimer[2]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; waitTimer[25]          ; waitTimer[25]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; waitTimer[27]          ; waitTimer[27]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; waitTimer[4]           ; waitTimer[4]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; waitTimer[29]          ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; waitTimer[30]          ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; waitTimer[7]           ; waitTimer[7]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; barState.STATE_WAIT    ; barPrevState.STATE_INC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.511      ;
+; 0.367 ; waitTimer[3]           ; waitTimer[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; waitTimer[5]           ; waitTimer[5]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; waitTimer[26]          ; waitTimer[26]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; waitTimer[28]          ; waitTimer[28]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; waitTimer[10]          ; waitTimer[10]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; waitTimer[8]           ; waitTimer[8]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.375 ; LEDR[2]~reg0           ; LEDR[3]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; LEDR[2]~reg0           ; LEDR[1]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.528      ;
+; 0.382 ; LEDR[9]~reg0           ; LEDR[8]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.534      ;
+; 0.382 ; LEDR[6]~reg0           ; LEDR[7]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.534      ;
+; 0.386 ; LEDR[3]~reg0           ; LEDR[2]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.538      ;
+; 0.392 ; LEDR[5]~reg0           ; LEDR[4]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.544      ;
+; 0.393 ; LEDR[5]~reg0           ; LEDR[6]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.545      ;
+; 0.395 ; LEDR[6]~reg0           ; LEDR[5]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.547      ;
+; 0.450 ; LEDR[8]~reg0           ; LEDR[9]~reg0           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.602      ;
+; 0.468 ; barState.STATE_DEC     ; barState.STATE_WAIT    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.620      ;
+; 0.479 ; barState.STATE_WAIT    ; barState.STATE_NONE    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.631      ;
+; 0.486 ; barState.STATE_INC     ; barState.STATE_WAIT    ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.638      ;
+; 0.487 ; barState.STATE_INC     ; barPrevState.STATE_INC ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.639      ;
+; 0.491 ; waitTimer[0]           ; waitTimer[1]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.643      ;
+; 0.493 ; waitTimer[1]           ; waitTimer[2]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.645      ;
+; 0.493 ; waitTimer[9]           ; waitTimer[10]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.645      ;
+; 0.496 ; waitTimer[2]           ; waitTimer[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; waitTimer[25]          ; waitTimer[26]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; waitTimer[27]          ; waitTimer[28]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497 ; waitTimer[30]          ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; waitTimer[29]          ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; waitTimer[4]           ; waitTimer[5]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.649      ;
+; 0.507 ; waitTimer[8]           ; waitTimer[9]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.659      ;
+; 0.507 ; waitTimer[26]          ; waitTimer[27]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.659      ;
+; 0.507 ; waitTimer[3]           ; waitTimer[4]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.659      ;
+; 0.507 ; waitTimer[28]          ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.659      ;
+; 0.526 ; waitTimer[0]           ; waitTimer[2]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.678      ;
+; 0.528 ; waitTimer[1]           ; waitTimer[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.680      ;
+; 0.531 ; waitTimer[25]          ; waitTimer[27]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; waitTimer[2]           ; waitTimer[4]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; waitTimer[27]          ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.532 ; waitTimer[29]          ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.684      ;
+; 0.542 ; waitTimer[5]           ; waitTimer[7]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542 ; waitTimer[8]           ; waitTimer[10]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542 ; waitTimer[26]          ; waitTimer[28]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542 ; waitTimer[28]          ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542 ; waitTimer[3]           ; waitTimer[5]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.694      ;
+; 0.548 ; barPrevState.STATE_DEC ; barState.STATE_INC     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.700      ;
+; 0.552 ; waitTimer[7]           ; waitTimer[8]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.704      ;
+; 0.561 ; waitTimer[0]           ; waitTimer[3]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.713      ;
+; 0.563 ; waitTimer[1]           ; waitTimer[4]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.715      ;
+; 0.565 ; barState.STATE_NONE    ; barState.STATE_INC     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.717      ;
+; 0.566 ; waitTimer[25]          ; waitTimer[28]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; waitTimer[27]          ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; waitTimer[2]           ; waitTimer[5]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.567 ; waitTimer[4]           ; waitTimer[7]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.719      ;
+; 0.574 ; waitTimer[15]          ; waitTimer[17]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.001      ; 0.727      ;
+; 0.575 ; waitTimer[16]          ; waitTimer[17]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.727      ;
+; 0.577 ; waitTimer[26]          ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.729      ;
+; 0.577 ; waitTimer[28]          ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.729      ;
+; 0.579 ; waitTimer[24]          ; waitTimer[25]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.736      ;
+; 0.582 ; waitTimer[22]          ; waitTimer[23]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.739      ;
+; 0.582 ; waitTimer[23]          ; waitTimer[25]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.734      ;
+; 0.587 ; waitTimer[7]           ; waitTimer[9]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.739      ;
+; 0.596 ; waitTimer[0]           ; waitTimer[4]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.748      ;
+; 0.598 ; waitTimer[1]           ; waitTimer[5]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.750      ;
+; 0.601 ; waitTimer[25]          ; waitTimer[29]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.753      ;
+; 0.601 ; waitTimer[27]          ; waitTimer[31]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.753      ;
+; 0.612 ; waitTimer[26]          ; waitTimer[30]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.764      ;
+; 0.612 ; waitTimer[3]           ; waitTimer[7]           ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.764      ;
+; 0.612 ; waitTimer[21]          ; waitTimer[23]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.764      ;
+; 0.614 ; waitTimer[24]          ; waitTimer[26]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.005      ; 0.771      ;
+; 0.617 ; waitTimer[23]          ; waitTimer[26]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.769      ;
+; 0.622 ; waitTimer[7]           ; waitTimer[10]          ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.774      ;
+; 0.630 ; barPrevState.STATE_INC ; barState.STATE_DEC     ; CLOCK_50     ; CLOCK_50    ; 0.000        ; 0.000      ; 0.782      ;
++-------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[0]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[0]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[1]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[1]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[2]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[2]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[3]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[3]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[4]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[4]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[5]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[5]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[6]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[6]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[7]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[7]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[8]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[8]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; LEDR[9]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; LEDR[9]~reg0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; barPrevState.STATE_DEC    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barPrevState.STATE_DEC    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; barPrevState.STATE_INC    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barPrevState.STATE_INC    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; barState.STATE_DEC        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barState.STATE_DEC        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; barState.STATE_INC        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barState.STATE_INC        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; barState.STATE_NONE       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barState.STATE_NONE       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; barState.STATE_WAIT       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; barState.STATE_WAIT       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[10]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[10]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[11]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[11]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[12]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[12]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[13]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[13]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[14]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[14]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[15]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[15]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[16]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[16]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[17]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[17]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[18]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[18]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[19]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[19]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[20]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[20]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[21]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[21]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[22]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[22]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[23]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[23]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[24]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[24]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[25]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[25]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[26]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[26]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[27]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[27]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[28]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[28]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[29]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[29]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[30]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[30]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[31]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[31]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; waitTimer[9]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; waitTimer[9]              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0] ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 3.404 ; 3.404 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 3.404 ; 3.404 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; 3.153 ; 3.153 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -2.082 ; -2.082 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -2.082 ; -2.082 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; -2.085 ; -2.085 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 3.919 ; 3.919 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 3.716 ; 3.716 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 3.683 ; 3.683 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 3.720 ; 3.720 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 3.844 ; 3.844 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 3.837 ; 3.837 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 3.864 ; 3.864 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 3.919 ; 3.919 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 3.832 ; 3.832 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 3.704 ; 3.704 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 3.705 ; 3.705 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 3.683 ; 3.683 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 3.716 ; 3.716 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 3.683 ; 3.683 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 3.720 ; 3.720 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 3.844 ; 3.844 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 3.837 ; 3.837 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 3.864 ; 3.864 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 3.919 ; 3.919 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 3.832 ; 3.832 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 3.704 ; 3.704 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 3.705 ; 3.705 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -6.883   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  CLOCK_50        ; -6.883   ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -171.786 ; 0.0   ; 0.0      ; 0.0     ; -60.287             ;
+;  CLOCK_50        ; -171.786 ; 0.000 ; N/A      ; N/A     ; -60.287             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 8.042 ; 8.042 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 8.042 ; 8.042 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; 7.380 ; 7.380 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; -2.082 ; -2.082 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -2.082 ; -2.082 ; Rise       ; CLOCK_50        ;
+;  KEY[1]   ; CLOCK_50   ; -2.085 ; -2.085 ; Rise       ; CLOCK_50        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 7.429 ; 7.429 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 6.872 ; 6.872 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 6.836 ; 6.836 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 6.878 ; 6.878 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 7.197 ; 7.197 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 7.043 ; 7.043 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 7.238 ; 7.238 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 7.429 ; 7.429 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 7.033 ; 7.033 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 6.883 ; 6.883 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 6.883 ; 6.883 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; CLOCK_50   ; 3.683 ; 3.683 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 3.716 ; 3.716 ; Rise       ; CLOCK_50        ;
+;  LEDR[1]  ; CLOCK_50   ; 3.683 ; 3.683 ; Rise       ; CLOCK_50        ;
+;  LEDR[2]  ; CLOCK_50   ; 3.720 ; 3.720 ; Rise       ; CLOCK_50        ;
+;  LEDR[3]  ; CLOCK_50   ; 3.844 ; 3.844 ; Rise       ; CLOCK_50        ;
+;  LEDR[4]  ; CLOCK_50   ; 3.837 ; 3.837 ; Rise       ; CLOCK_50        ;
+;  LEDR[5]  ; CLOCK_50   ; 3.864 ; 3.864 ; Rise       ; CLOCK_50        ;
+;  LEDR[6]  ; CLOCK_50   ; 3.919 ; 3.919 ; Rise       ; CLOCK_50        ;
+;  LEDR[7]  ; CLOCK_50   ; 3.832 ; 3.832 ; Rise       ; CLOCK_50        ;
+;  LEDR[8]  ; CLOCK_50   ; 3.704 ; 3.704 ; Rise       ; CLOCK_50        ;
+;  LEDR[9]  ; CLOCK_50   ; 3.705 ; 3.705 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 9822     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK_50   ; CLOCK_50 ; 9822     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 7     ; 7    ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 10    ; 10   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Mon Jan 19 12:47:06 2015
+Info: Command: quartus_sta controlbar -c controlbar
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'controlbar.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.883
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.883      -171.786 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -60.287 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.192
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.192       -43.052 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -49.380 CLOCK_50 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 407 megabytes
+    Info: Processing ended: Mon Jan 19 12:47:06 2015
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

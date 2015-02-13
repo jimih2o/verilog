@@ -1,14 +1,14 @@
-Fitter Status : Successful - Tue Jan 27 16:08:13 2015
+Fitter Status : Successful - Tue Feb 03 17:57:49 2015
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
 Revision Name : vga800x600_60hz
 Top-level Entity Name : driver
 Family : Cyclone II
 Device : EP2C20F484C7
 Timing Models : Final
-Total logic elements : 105 / 18,752 ( < 1 % )
-    Total combinational functions : 105 / 18,752 ( < 1 % )
-    Dedicated logic registers : 65 / 18,752 ( < 1 % )
-Total registers : 65
+Total logic elements : 168 / 18,752 ( < 1 % )
+    Total combinational functions : 168 / 18,752 ( < 1 % )
+    Dedicated logic registers : 56 / 18,752 ( < 1 % )
+Total registers : 56
 Total pins : 15 / 315 ( 5 % )
 Total virtual pins : 0
 Total memory bits : 0 / 239,616 ( 0 % )

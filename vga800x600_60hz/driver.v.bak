@@ -1,0 +1,53 @@
+module driver(/*CLOCK_50,*/ VGA_R, VGA_G, VGA_B, VGA_HS, VGA_VS) ;
+//input CLOCK_50 ;
+parameter PIXEL_DEPTH = 4 ;
+parameter SCREEN_WIDTH  = 800 + 800 / 4 ;
+parameter SCREEN_HEIGHT = 600 + 600 / 4 ;
+parameter LINE_R        = 4 ;
+parameter LINE_G        = 8 ;
+parameter LINE_B        = 12 ;
+
+// modelsim
+reg CLOCK_50 = 0 ;
+always #20000 CLOCK_50 = ~CLOCK_50 ;
+
+output [(PIXEL_DEPTH - 1):0] VGA_R, VGA_G, VGA_B ;
+output VGA_HS, VGA_VS ;
+
+wire [SCREEN_WIDTH * PIXEL_DEPTH * 3 - 1 : 0] scanlinewire ;
+reg  [SCREEN_WIDTH * PIXEL_DEPTH * 3 - 1 : 0] scanLine = 0 ;
+
+initial begin : Initialization_Block
+	integer j ;
+	
+	for (j = 0; j < SCREEN_WIDTH; j = j + 1) begin
+		scanLine[j * 3 * PIXEL_DEPTH    ] = 'b1 ;
+		scanLine[j * 3 * PIXEL_DEPTH + 1] = 'b1 ;
+		scanLine[j * 3 * PIXEL_DEPTH + 2] = 'b1 ;
+		scanLine[j * 3 * PIXEL_DEPTH + 3] = 'b1 ;
+
+		scanLine[j * 3 * PIXEL_DEPTH + LINE_R    ] = 1'b1 ;
+		scanLine[j * 3 * PIXEL_DEPTH + LINE_R + 1] = 1'b1 ;
+		scanLine[j * 3 * PIXEL_DEPTH + LINE_R + 2] = 1'b1 ;
+		scanLine[j * 3 * PIXEL_DEPTH + LINE_R + 3] = 1'b1 ;
+
+		scanLine[j * 3 * PIXEL_DEPTH + LINE_G    ] = 1'b1 ;
+		scanLine[j * 3 * PIXEL_DEPTH + LINE_G + 1] = 1'b1 ;
+		scanLine[j * 3 * PIXEL_DEPTH + LINE_G + 2] = 1'b1 ;
+		scanLine[j * 3 * PIXEL_DEPTH + LINE_G + 3] = 1'b1 ;
+	end
+end
+
+vga_interface #(PIXEL_DEPTH) vgaScreen(
+	.clock_50mhz(CLOCK_50),
+	.red(VGA_R), 
+	.green(VGA_G), 
+	.blue(VGA_B), 
+	.scan_line(scanlinewire),
+	.h_sync(VGA_HS),
+	.v_sync(VGA_VS)
+	) ; 
+
+assign scanlinewire = scanLine ;
+
+endmodule

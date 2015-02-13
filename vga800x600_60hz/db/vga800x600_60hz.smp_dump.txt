@@ -1,0 +1,8 @@
+
+State Machine - |driver|vga_display:vga|state
+Name state.STATE_LINE_END state.STATE_LINE_DRAW state.STATE_LINE_BEGIN state.STATE_FRAME_BEGIN state.STATE_FRAME_END 
+state.STATE_FRAME_BEGIN 0 0 0 0 0 
+state.STATE_LINE_BEGIN 0 0 1 1 0 
+state.STATE_LINE_DRAW 0 1 0 1 0 
+state.STATE_LINE_END 1 0 0 1 0 
+state.STATE_FRAME_END 0 0 0 1 1 

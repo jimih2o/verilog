@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga800x600_60hz
-Tue Jan 27 16:54:42 2015
+Tue Feb 03 17:57:44 2015
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -10,11 +10,17 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Multiplexer Restructuring Statistics (Restructuring Performed)
-  6. Parameter Settings for User Entity Instance: Top-level Entity: |driver
-  7. Parameter Settings for User Entity Instance: vga_interface:vgaScreen
-  8. Elapsed Time Per Partition
-  9. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |driver
+ 13. Parameter Settings for User Entity Instance: vga_display:vga
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -40,20 +46,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Jan 27 16:54:42 2015          ;
+; Analysis & Synthesis Status        ; Successful - Tue Feb 03 17:57:44 2015      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; vga800x600_60hz                            ;
 ; Top-level Entity Name              ; driver                                     ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Total logic elements               ; 168                                        ;
+;     Total combinational functions  ; 168                                        ;
+;     Dedicated logic registers      ; 56                                         ;
+; Total registers                    ; 56                                         ;
+; Total pins                         ; 15                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -159,14 +165,102 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |driver|vga_interface:vgaScreen|j[18] ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |driver|vga_interface:vgaScreen|i[17] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; vga_display.v                    ; yes             ; User Verilog HDL File  ; C:/Users/jimi/git/verilog/vga800x600_60hz/vga_display.v ;         ;
+; driver.v                         ; yes             ; User Verilog HDL File  ; C:/Users/jimi/git/verilog/vga800x600_60hz/driver.v      ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 168      ;
+;                                             ;          ;
+; Total combinational functions               ; 168      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 42       ;
+;     -- 3 input functions                    ; 54       ;
+;     -- <=2 input functions                  ; 72       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 104      ;
+;     -- arithmetic mode                      ; 64       ;
+;                                             ;          ;
+; Total registers                             ; 56       ;
+;     -- Dedicated logic registers            ; 56       ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 15       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 46       ;
+; Total fan-out                               ; 614      ;
+; Average fan-out                             ; 2.57     ;
++---------------------------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                             ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
+; |driver                    ; 168 (0)           ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |driver                 ;              ;
+;    |vga_display:vga|       ; 168 (168)         ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |driver|vga_display:vga ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++---------------------------------------+------------------------------------------------+
+; Register name                         ; Reason for Removal                             ;
++---------------------------------------+------------------------------------------------+
+; vga_display:vga|currentPixel[0][0]    ; Merged with vga_display:vga|currentPixel[1][0] ;
+; Total Number of Removed Registers = 1 ;                                                ;
++---------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 56    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; vga_display:vga|x[6]                   ; 3       ;
+; vga_display:vga|x[5]                   ; 3       ;
+; vga_display:vga|x[2]                   ; 3       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |driver|vga_display:vga|currentPixel[0][1] ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |driver|vga_display:vga|igrad[7]           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
 +------------------------------------------------------------------------+
@@ -174,29 +268,27 @@ applicable agreement for further details.
 +----------------+-------+-----------------------------------------------+
 ; Parameter Name ; Value ; Type                                          ;
 +----------------+-------+-----------------------------------------------+
-; PIXEL_DEPTH    ; 4     ; Signed Integer                                ;
+; SCREEN_WIDTH   ; 800   ; Signed Integer                                ;
+; SCREEN_HEIGHT  ; 600   ; Signed Integer                                ;
 +----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: vga_interface:vgaScreen ;
-+----------------+--------+--------------------------------------------+
-; Parameter Name ; Value  ; Type                                       ;
-+----------------+--------+--------------------------------------------+
-; PIXEL_DEPTH    ; 4      ; Signed Integer                             ;
-; SCREEN_WIDTH   ; 1000   ; Signed Integer                             ;
-; SCREEN_HEIGHT  ; 750    ; Signed Integer                             ;
-; FRONT_PORCH_X  ; 50     ; Signed Integer                             ;
-; FRONT_PORCH_Y  ; 1      ; Signed Integer                             ;
-; SINK_X         ; 160    ; Signed Integer                             ;
-; SINK_Y         ; 5      ; Signed Integer                             ;
-; BACK_PORCH_X   ; 110    ; Signed Integer                             ;
-; BACK_PORCH_Y   ; 28     ; Signed Integer                             ;
-; SCREEN_TOTAL_X ; 1320   ; Signed Integer                             ;
-; SCREEN_TOTAL_Y ; 34     ; Signed Integer                             ;
-; TOTAL_PIXELS   ; 990034 ; Signed Integer                             ;
-+----------------+--------+--------------------------------------------+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_display:vga ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; WIDTH          ; 800   ; Signed Integer                      ;
+; HEIGHT         ; 600   ; Signed Integer                      ;
+; FRONTP_X       ; 56    ; Signed Integer                      ;
+; SINK_X         ; 120   ; Signed Integer                      ;
+; BACKP_X        ; 64    ; Signed Integer                      ;
+; FRONTP_Y       ; 37    ; Signed Integer                      ;
+; SINK_Y         ; 6     ; Signed Integer                      ;
+; BACKP_Y        ; 23    ; Signed Integer                      ;
+; BOX_SIZE       ; 100   ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -215,20 +307,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Jan 27 16:54:41 2015
+    Info: Processing started: Tue Feb 03 17:57:42 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga800x600_60hz -c vga800x600_60hz
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
-Info (12021): Found 1 design units, including 1 entities, in source file vga_interface.v
-    Info (12023): Found entity 1: vga_interface
+Info (12021): Found 1 design units, including 1 entities, in source file vga_display.v
+    Info (12023): Found entity 1: vga_display
+Info (12021): Found 1 design units, including 1 entities, in source file geometry_line_scanner.v
+    Info (12023): Found entity 1: geometry_line_scanner
 Info (12021): Found 1 design units, including 1 entities, in source file driver.v
     Info (12023): Found entity 1: driver
 Info (12127): Elaborating entity "driver" for the top level hierarchy
-Info (12128): Elaborating entity "vga_interface" for hierarchy "vga_interface:vgaScreen"
-Error (276003): Cannot convert all sets of registers into RAM megafunctions when creating nodes. The resulting number of registers remaining in design exceeds the number of registers in the device or the number specified by the assignment max_number_of_registers_from_uninferred_rams. This can cause longer compilation time or result in insufficient memory to complete Analysis and Synthesis
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 0 warnings
-    Error: Peak virtual memory: 463 megabytes
-    Error: Processing ended: Tue Jan 27 16:54:42 2015
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12128): Elaborating entity "vga_display" for hierarchy "vga_display:vga"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 201 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 186 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 486 megabytes
+    Info: Processing ended: Tue Feb 03 17:57:44 2015
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -1,1 +1,6 @@
-Warning (10268): Verilog HDL information at driver.v(29): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at geometry_line_scanner.v(12): object "R1" differs only in case from object "r1" in the same scope
+Info (10281): Verilog HDL Declaration information at geometry_line_scanner.v(13): object "G1" differs only in case from object "g1" in the same scope
+Info (10281): Verilog HDL Declaration information at geometry_line_scanner.v(14): object "B1" differs only in case from object "b1" in the same scope
+Info (10281): Verilog HDL Declaration information at geometry_line_scanner.v(16): object "R2" differs only in case from object "r2" in the same scope
+Info (10281): Verilog HDL Declaration information at geometry_line_scanner.v(17): object "G2" differs only in case from object "g2" in the same scope
+Info (10281): Verilog HDL Declaration information at geometry_line_scanner.v(18): object "B2" differs only in case from object "b2" in the same scope

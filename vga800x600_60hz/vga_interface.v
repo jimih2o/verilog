@@ -1,32 +1,21 @@
 // Idea:
 // Make this a state machine.
 // Timing = based on clock pulse sizes.
-// 40MHz pixel clock for VGA @(60Hz)
-// 50MHz supply clock =>
-// 1.25Px per clock pulse.
-// 1px @ normal = 1.25px @ fast rate
-// so... all pixel values = 125% of there
-// original size (i.e. needing 4 pixels, you now need 5 to keep timing
-// correct). (skew image by 25%)
-module vga_interface(clock_50mhz, red, green, blue, scan_line, h_sync, v_sync) ;
+module vga_interface(clock_25mhz, red, green, blue, scan_line, h_sync, v_sync) ;
 parameter PIXEL_DEPTH   = 4 ;
 parameter LINE_R        = 4 ;
 parameter LINE_G        = 8 ;
 parameter LINE_B        = 12 ;
-parameter SCREEN_WIDTH  = 800 + 800 / 4 ; // increase 25%
-parameter SCREEN_HEIGHT = 600 + 600 / 4 ;
-parameter FRONT_PORCH_X = 40 + 40 / 4 ;
-parameter FRONT_PORCH_Y = 1 + 1 / 4 ; // this could be a timing issue...
+parameter SCREEN_WIDTH  = 640 ;
+parameter SCREEN_HEIGHT = 480 ;
 
-parameter SINK_X        = 128 + 128 / 4 ;
-parameter SINK_Y        = 4 + 4 / 4 ;
-parameter BACK_PORCH_X  = 88 + 88 / 4 ;
+parameter FRONT_PORCH_X = 16 ;
+parameter SINK_X        = 96 ;
+parameter BACK_PORCH_X  = 48 ;
 
-parameter BACK_PORCH_Y  = 23 + 23 / 4 ; // the vertical timing is going to get wonky. 
-
-parameter SCREEN_TOTAL_X = FRONT_PORCH_X + SCREEN_WIDTH + SINK_X + BACK_PORCH_X ;
-parameter SCREEN_TOTAL_Y = FRONT_PORCH_Y + SINK_Y + BACK_PORCH_Y ;
-parameter TOTAL_PIXELS   = SCREEN_TOTAL_X * SCREEN_HEIGHT + SCREEN_TOTAL_Y ;
+parameter FRONT_PORCH_Y = 10 ;
+parameter SINK_Y        = 2 ;
+parameter BACK_PORCH_Y  = 33 ; 
 
 // states (for VGA lines)
 parameter STATE_BEGIN_FRAME = 0 ;
@@ -37,7 +26,7 @@ parameter STATE_END_FRAME   = 4 ;
 parameter STATE_WAIT_FRAME  = 5 ;
 
 // VGA interfacing
-input clock_50mhz ;
+input clock_25mhz ;
 output h_sync, v_sync ;
 output [(PIXEL_DEPTH - 1) : 0] red, green, blue ;
 
@@ -49,45 +38,81 @@ reg [(PIXEL_DEPTH - 1) : 0] outRed = 0, outGreen = 0, outBlue = 0 ;
 
 reg [3:0] state = STATE_BEGIN_FRAME ;
 
-integer i = 0, j = 0 ;
+integer j = 0 ;
+integer scanLineCount = 0 ;
 
 // main synchronization block
-always @(posedge clock_50mhz or posedge wr) begin
+always @(posedge clock_25mhz) begin
 	case (state)
 	STATE_BEGIN_FRAME: begin
-		i = 0 ;
 		j = 0 ;
 		state = STATE_WAIT_FRAME ;
+		outRed = 4'b0 ;
+		outGreen = 4'b0 ;
+		outBlue = 4'b0 ;
+		scanLineCount = 0 ;
 	end
 	
 	STATE_WAIT_FRAME: begin
-		if (i == FRONT_PORCH_Y) 
+		j = j + 1 ;
+		if (j == FRONT_PORCH_Y) begin
 			state = STATE_BEGIN_LINE ;
+			j = 0 ;
+		end
+		
+		outRed = 4'b0 ;
+		outGreen = 4'b0 ;
+		outBlue = 4'b0 ;
 	end
 	
 	STATE_BEGIN_LINE: begin
 		j = j + 1 ;
 		
-		if (j == FRONT_PORCH_X) begin		
+		if (j == FRONT_PORCH_X) begin	
 			j = 0 ;
 			state = STATE_SCANLINE ;
 		end
+		
+		outRed = 4'b0 ;
+		outGreen = 4'b0 ;
+		outBlue = 4'b0 ;
 	end
 	
 	STATE_SCANLINE: begin
-		outRed   = scan_line[j * 3 * PIXEL_DEPTH + LINE_R - 1: j * 3 * PIXEL_DEPTH] ;
-		outGreen = scan_line[j * 3 * PIXEL_DEPTH + LINE_G - 1: j * 3 * PIXEL_DEPTH + LINE_R] ;
-		outBlue  = scan_line[j * 3 * PIXEL_DEPTH + LINE_B - 1: j * 3 * PIXEL_DEPTH + LINE_G] ;
+		outRed[0] = scan_line[j * 3 * PIXEL_DEPTH    ] ;
+		outRed[1] = scan_line[j * 3 * PIXEL_DEPTH + 1] ;
+		outRed[2] = scan_line[j * 3 * PIXEL_DEPTH + 2] ;
+		outRed[3] = scan_line[j * 3 * PIXEL_DEPTH + 3] ;
+//		outRed   = scan_line[j * 3 * PIXEL_DEPTH + LINE_R - 1: j * 3 * PIXEL_DEPTH] ;
+
+		outGreen[0] = scan_line[j * 3 * PIXEL_DEPTH + LINE_R    ] ;
+		outGreen[1] = scan_line[j * 3 * PIXEL_DEPTH + LINE_R + 1] ;
+		outGreen[2] = scan_line[j * 3 * PIXEL_DEPTH + LINE_R + 2] ;
+		outGreen[3] = scan_line[j * 3 * PIXEL_DEPTH + LINE_R + 3] ;		
+//		outGreen = scan_line[j * 3 * PIXEL_DEPTH + LINE_G - 1: j * 3 * PIXEL_DEPTH + LINE_R] ;
+
+		outBlue[0] = scan_line[j * 3 * PIXEL_DEPTH + LINE_G    ] ;
+		outBlue[1] = scan_line[j * 3 * PIXEL_DEPTH + LINE_G + 1] ;
+		outBlue[2] = scan_line[j * 3 * PIXEL_DEPTH + LINE_G + 2] ;
+		outBlue[3] = scan_line[j * 3 * PIXEL_DEPTH + LINE_G + 3] ;
+//		outBlue  = scan_line[j * 3 * PIXEL_DEPTH + LINE_B - 1: j * 3 * PIXEL_DEPTH + LINE_G] ;
 		
 		j = j + 1 ;
 		
 		if (j == SCREEN_WIDTH) begin
 			j = 0 ;
 			state = STATE_END_LINE ;
+			outRed = 4'b0 ;
+			outGreen = 4'b0 ;
+			outBlue = 4'b0 ;
 		end
 	end
 	
 	STATE_END_LINE: begin
+		outRed = 4'b0 ;
+		outGreen = 4'b0 ;
+		outBlue = 4'b0 ;
+		
 		if (j == 0) begin 
 			hSyncReg = 0 ;
 		end else if (j == SINK_X) begin
@@ -96,30 +121,35 @@ always @(posedge clock_50mhz or posedge wr) begin
 		
 		if (j == SINK_X + BACK_PORCH_X) begin
 			j = 0 ;
-			
-			if (i == TOTAL_PIXELS - BACK_PORCH_Y - SINK_Y) begin
+			scanLineCount = scanLineCount + 1 ;
+
+			if (scanLineCount == SCREEN_HEIGHT) begin
 				state = STATE_END_FRAME ;
 				vSyncReg = 0 ;
 			end else
 				state = STATE_BEGIN_LINE ;
-			
 		end else begin
 			j = j + 1 ;
 		end
 	end
 	
 	STATE_END_FRAME: begin
-		if (i == TOTAL_PIXELS - BACK_PORCH_Y) begin
-			vSyncReg = 1 ;
-		end else if (i == TOTAL_PIXELS)
+		outRed = 4'b0 ;
+		outGreen = 4'b0 ;
+		outBlue = 4'b0 ;
+		
+		j = j + 1 ;
+		
+		if (j == SINK_Y) 
+			vSyncReg = 1 ;	
+		else if (j == SINK_Y + BACK_PORCH_Y) begin
 			state = STATE_BEGIN_FRAME ;
+			j = 0 ;
+		end
 	end
 	
 	default: state = STATE_BEGIN_FRAME ;
 	endcase 
-	
-	// increment pixel position
-	i = i + 1 ;
 end
 
 assign red = outRed ;

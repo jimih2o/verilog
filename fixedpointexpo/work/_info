@@ -1,0 +1,62 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\jimi\Documents\GitHub\verilog\paralleltoserial
+vfixed_exp
+Z1 IP`@4mzX;Z?2ek14f^`gG>1
+Z2 V1KP1^XBQLLIFB0@K7Gbac0
+Z3 dC:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo
+Z4 w1423973374
+Z5 8C:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo\fixed_exp.v
+Z6 FC:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo\fixed_exp.v
+L0 1
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -reportprogress|300|-work|work|C:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo\fixed_exp.v|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 gYU:DCkAA?Z2Q7`VTW4Ig1
+!s85 0
+Z11 !s108 1423973379.306000
+Z12 !s107 C:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo\fixed_exp.v|
+!s101 -O0
+vhwexpo
+!i10b 1
+Z13 !s100 AbEb[X`7l0T]j1H3=U]U10
+Z14 In6l3CB1lm3Y?96bRdfZnF2
+Z15 Va=9NHSd1;`jfd^<[G=G2c1
+R3
+Z16 w1423973304
+Z17 8C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v
+Z18 FC:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v
+L0 2
+R7
+r1
+!s85 0
+31
+Z19 !s108 1423973379.399000
+Z20 !s107 C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v|
+Z21 !s90 -reportprogress|300|-work|work|C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v|
+!s101 -O0
+R9
+vtestbench
+!i10b 1
+Z22 !s100 jGQ1oN7LgCiZoH6]HR<BE2
+Z23 Ic^lBX@4ZcE>^bPn@;=dbJ0
+Z24 VhGfW:390DM[oDMzegDH9`2
+R3
+R16
+R17
+R18
+L0 10
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

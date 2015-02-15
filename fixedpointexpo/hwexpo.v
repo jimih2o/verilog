@@ -1,9 +1,13 @@
 // Template for the hardware FPGA implementation of the exp function
-module hwexpo(SW, LEDR, CLOCK_50) ;
+module hwexpo(SW, LEDR, CLOCK_50, KEY) ;
 input wire [9:0] SW; // in signed fixed point 3.7 plus sign bit
-output reg [9:0] LEDR; // in unsigned fixed point 5.5 format
+output [9:0] LEDR; // in unsigned fixed point 5.5 format
 input wire CLOCK_50;
+input [0:0] KEY ;
 // your code goes here
+
+fixed_exp EXP(SW, LEDR, CLOCK_50, KEY[0]) ;
+
 endmodule
 
 // Testbench for testing exp module
@@ -31,7 +35,7 @@ always @(LEDR) begin // execute every time a new output becomes available
 	// Calculate a real random number between 0 and 3.46
 	x = $itor($random & 'hFFFF) / $itor(1<<16) * 3.46;
 	SW = $rtoi(x * (1<<7)); // Set the switches in 3.7 signed fixed point format
-	//$display("next exp(%6.3f) %10b", x, SW);
+	$display("next exp(%6.3f) %10b", x, SW);
 end
 
 // clock driver, clock cycle is 4

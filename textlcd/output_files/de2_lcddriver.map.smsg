@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at de2_lcddriver.v(70): always construct contains both blocking and non-blocking assignments

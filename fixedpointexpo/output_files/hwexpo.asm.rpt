@@ -1,5 +1,5 @@
 Assembler report for hwexpo
-Sat Feb 14 20:21:34 2015
+Mon Feb 16 14:42:12 2015
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Feb 14 20:21:34 2015 ;
+; Assembler Status      ; Successful - Mon Feb 16 14:42:12 2015 ;
 ; Revision Name         ; hwexpo                                ;
 ; Top-level Entity Name ; hwexpo                                ;
 ; Family                ; Cyclone II                            ;
@@ -94,8 +94,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                                ;
 +----------------+----------------------------------------------------------------------------------------+
 ; Device         ; EP2C20F484C7                                                                           ;
-; JTAG usercode  ; 0x0021EE73                                                                             ;
-; Checksum       ; 0x0021EE73                                                                             ;
+; JTAG usercode  ; 0x001F8C90                                                                             ;
+; Checksum       ; 0x001F8C90                                                                             ;
 +----------------+----------------------------------------------------------------------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+------------------------------------------------------------------------------------+
 ; Device             ; EPCS16                                                                             ;
 ; JTAG usercode      ; 0x00000000                                                                         ;
-; Checksum           ; 0x1DCD6E45                                                                         ;
+; Checksum           ; 0x1DD351A7                                                                         ;
 ; Compression Ratio  ; 3                                                                                  ;
 +--------------------+------------------------------------------------------------------------------------+
 
@@ -117,13 +117,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Feb 14 20:21:33 2015
+    Info: Processing started: Mon Feb 16 14:42:11 2015
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off fixedpointexpo -c hwexpo
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 409 megabytes
-    Info: Processing ended: Sat Feb 14 20:21:34 2015
+    Info: Peak virtual memory: 422 megabytes
+    Info: Processing ended: Mon Feb 16 14:42:12 2015
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

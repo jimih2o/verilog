@@ -1,0 +1,11 @@
+module sandbox(
+               CLOCK_50,
+               LEDR
+               );
+
+   input CLOCK_50 ;
+   output [9:0] LEDR ;
+
+   assign LEDR = LEDR + CLOCK_50 ;
+
+endmodule

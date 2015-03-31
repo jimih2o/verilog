@@ -4,54 +4,54 @@ K3
 cModel Technology
 Z0 dC:\Users\jimi\Documents\GitHub\verilog\paralleltoserial
 vfixed_exp
-Z1 IP`@4mzX;Z?2ek14f^`gG>1
-Z2 V1KP1^XBQLLIFB0@K7Gbac0
-Z3 dC:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo
-Z4 w1423973374
-Z5 8C:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo\fixed_exp.v
-Z6 FC:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo\fixed_exp.v
+Z1 !s100 n3Fh9@g9HRA<iVTG[OjO01
+Z2 IBC:kBScogc?jUL<Zk8A2U3
+Z3 V1KP1^XBQLLIFB0@K7Gbac0
+Z4 dC:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo
+Z5 w1424122634
+Z6 8C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/fixed_exp.v
+Z7 FC:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/fixed_exp.v
 L0 1
-Z7 OV;L;10.1d;51
+Z8 OV;L;10.1d;51
 r1
 31
-Z8 !s90 -reportprogress|300|-work|work|C:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo\fixed_exp.v|
-Z9 o-work work -O0
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/fixed_exp.v|
+Z10 o-work work -O0
 !i10b 1
-Z10 !s100 gYU:DCkAA?Z2Q7`VTW4Ig1
 !s85 0
-Z11 !s108 1423973379.306000
-Z12 !s107 C:\Users\jimi\Documents\GitHub\verilog\fixedpointexpo\fixed_exp.v|
+Z11 !s108 1424122649.940000
+Z12 !s107 C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/fixed_exp.v|
 !s101 -O0
 vhwexpo
 !i10b 1
-Z13 !s100 AbEb[X`7l0T]j1H3=U]U10
-Z14 In6l3CB1lm3Y?96bRdfZnF2
-Z15 Va=9NHSd1;`jfd^<[G=G2c1
-R3
-Z16 w1423973304
+Z13 !s100 f]kP5ml4S<=7Xj0WzE;l_3
+Z14 IF1zKj5I_FlXP<b?Rb<2I?0
+Z15 VV1ePONR0>4D@nz>I6l<CY3
+R4
+Z16 w1424120970
 Z17 8C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v
 Z18 FC:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v
 L0 2
-R7
+R8
 r1
 !s85 0
 31
-Z19 !s108 1423973379.399000
+Z19 !s108 1424122650.018000
 Z20 !s107 C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v|
 Z21 !s90 -reportprogress|300|-work|work|C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v|
 !s101 -O0
-R9
+R10
 vtestbench
 !i10b 1
-Z22 !s100 jGQ1oN7LgCiZoH6]HR<BE2
-Z23 Ic^lBX@4ZcE>^bPn@;=dbJ0
+Z22 !s100 ]?GIhL8EOG1TFHWkkG9g;2
+Z23 IHVo:JMC_Cj54oUC_NK_m<3
 Z24 VhGfW:390DM[oDMzegDH9`2
-R3
+R4
 R16
 R17
 R18
-L0 10
-R7
+L0 14
+R8
 r1
 !s85 0
 31
@@ -59,4 +59,4 @@ R19
 R20
 R21
 !s101 -O0
-R9
+R10

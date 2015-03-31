@@ -4,6 +4,7 @@ entity hwexpo is
     port(
         SW              : in     vl_logic_vector(9 downto 0);
         LEDR            : out    vl_logic_vector(9 downto 0);
-        CLOCK_50        : in     vl_logic
+        CLOCK_50        : in     vl_logic;
+        KEY             : in     vl_logic_vector(0 downto 0)
     );
 end hwexpo;

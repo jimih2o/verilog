@@ -45,6 +45,11 @@ char const *FloatToFixedBinary(float f)
 	// idea:
 	// convert a float into a series of +1 or 0's.
 	
+        if (f < 0.0F) {
+                f = -f ;
+                str[i++] = '-' ;
+        }
+        
 	for (i = 0; n; ++i, n = n >> 1) {
 		if (f >= n) {
 			f -= n ;
@@ -57,7 +62,7 @@ char const *FloatToFixedBinary(float f)
 	// fixed point
 	str[i++] = '.' ;
 	
-	for (n = 1; n < (1 << 31); n = n << 1, ++i) {
+	for (n = 2; n < (1 << 31); n = n << 1, ++i) {
 		float v = 1.0F / ((float)n) ; 
 		if (f >= v) {
 			str[i] = '1' ;

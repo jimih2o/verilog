@@ -1,0 +1,21 @@
+# Loading project ethernet
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv failed with 1 errors.
+# Compile of defs.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of defs.sv was successful.
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv failed with 1 errors.
+# Compile of defs.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv failed with 1 errors.
+# Compile of defs.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.

@@ -1,0 +1,25 @@
+/home/jimi/git/verilog/ethernet/defs.sv {1 {vlog -work work -sv -stats=none /home/jimi/git/verilog/ethernet/defs.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling package ProtocolInfo
+
+Top level modules:
+	--none--
+
+} {} {}} /home/jimi/git/verilog/ethernet/ethernet_controller.sv {1 {vlog -work work -sv -stats=none /home/jimi/git/verilog/ethernet/ethernet_controller.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module ethernet_controller
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} /home/jimi/git/verilog/ethernet/dm9000a.sv {1 {vlog -work work -sv -stats=none /home/jimi/git/verilog/ethernet/dm9000a.sv
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling package dm9000a_sv_unit
+-- Importing package ProtocolInfo
+-- Compiling module dm9000a
+
+Top level modules:
+	dm9000a
+
+} {} {}}

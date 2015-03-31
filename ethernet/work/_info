@@ -1,0 +1,126 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/jimi/altera/14.1/modelsim_ase/linuxaloem
+vdm9000a
+Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z1 DXx4 work 12 ProtocolInfo 0 22 6NIgIR@:AXBfVH8[l^2@L2
+DXx4 work 15 dm9000a_sv_unit 0 22 _lUbhkdU]NH7l47=X0BP11
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+r1
+!s85 0
+31
+!i10b 1
+!s100 fez[]d=SM]l8`E4M1kBZ=1
+ISkbfSRoz<U19SUX5G[QL^1
+!s105 dm9000a_sv_unit
+S1
+Z3 d/home/jimi/git/verilog/ethernet
+Z4 w1427821331
+Z5 8/home/jimi/git/verilog/ethernet/dm9000a.sv
+Z6 F/home/jimi/git/verilog/ethernet/dm9000a.sv
+L0 6
+Z7 OV;L;10.3c;59
+Z8 !s108 1427821333.749531
+Z9 !s107 /home/jimi/git/verilog/ethernet/dm9000a.sv|
+Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/dm9000a.sv|
+!i113 1
+Z11 o-work work -sv
+Xdm9000a_sv_unit
+R0
+R1
+V_lUbhkdU]NH7l47=X0BP11
+r1
+!s85 0
+31
+!i10b 1
+!s100 [ngDlfQH2X`Fz=0j3Ih4B2
+I_lUbhkdU]NH7l47=X0BP11
+!i103 1
+S1
+R3
+R4
+R5
+R6
+L0 2
+R7
+R8
+R9
+R10
+!i113 1
+R11
+vethernet_controller
+R0
+Z12 !s110 1427821333
+!i10b 1
+!s100 b=W231J6Lj7k1F?jEoPmg3
+I>UNfYZYBQjbHgN0DkFcR[2
+R2
+Z13 !s105 ethernet_controller_sv_unit
+S1
+R3
+Z14 w1427690197
+Z15 8/home/jimi/git/verilog/ethernet/ethernet_controller.sv
+Z16 F/home/jimi/git/verilog/ethernet/ethernet_controller.sv
+L0 6
+R7
+r1
+!s85 0
+31
+Z17 !s108 1427821333.716774
+Z18 !s107 /home/jimi/git/verilog/ethernet/ethernet_controller.sv|
+Z19 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/ethernet_controller.sv|
+!i113 1
+R11
+XProtocolInfo
+R0
+R12
+!i10b 1
+!s100 MU<R6K9@HdPH3mk5j5AAB2
+I6NIgIR@:AXBfVH8[l^2@L2
+V6NIgIR@:AXBfVH8[l^2@L2
+S1
+R3
+w1427821268
+8/home/jimi/git/verilog/ethernet/defs.sv
+F/home/jimi/git/verilog/ethernet/defs.sv
+L0 1
+R7
+r1
+!s85 0
+31
+!s108 1427821333.781883
+!s107 /home/jimi/git/verilog/ethernet/defs.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/defs.sv|
+!i113 1
+R11
+n@protocol@info
+vtestbench
+R0
+R12
+!i10b 1
+!s100 hIM76GX7T<knh55mDAYYY2
+I;H33^a];3K]_oom=:BzX]2
+R2
+R13
+S1
+R3
+R14
+R15
+R16
+L0 61
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R11

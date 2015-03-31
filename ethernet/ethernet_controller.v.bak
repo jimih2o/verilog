@@ -1,0 +1,28 @@
+// inputs:
+//	GPIO_1
+//	PLL'd clock 50 -> 100	
+module ethernet_controller(CLK, GPIO_1) ;
+input CLK ;
+input [15:0] GPIO_1 ;
+
+always @(CLK) begin
+	
+end
+
+endmodule // ethernet_controller
+
+// synthesis off
+module testbench ;
+
+reg [15:0] in ;
+reg clk ;
+
+always #10 clk ;
+
+ethernet_controller enet(clk, in) ;
+
+begin : blk1
+	
+end
+
+endmodule

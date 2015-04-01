@@ -17,13 +17,12 @@ logic [15:0] data_buffer[17:0] ;
 integer clock_counter = 0 ;
 integer sample_index = 0 ;
 
-// synthesis off
+// synthesis translate off
 logic [15:0] ENET_DATA ;
 logic ENET_CLK, ENET_CMD, ENET_CS_N, ENET_INT, ENET_RD_N, ENET_WR_N, ENET_RST_N ;
-// synthesis on
+// synthesis translate on
 
 dm9000a DM9000A(.*, .clk100(CLK)) ;
-
 
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// Sampling
@@ -57,7 +56,7 @@ endmodule // ethernet_controller
 
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// Testbench Driver
-// synthesis off
+// synthesis translate off
 module testbench ;
 
 logic [15:0] in = 16'b0 ;

@@ -1,0 +1,16 @@
+C:/Users/jimi/Documents/GitHub/verilog/ethernet/ethernet_controller.sv {1 {vlog -work work -sv C:/Users/jimi/Documents/GitHub/verilog/ethernet/ethernet_controller.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module ethernet_controller
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} C:/Users/jimi/Documents/GitHub/verilog/ethernet/defs.sv {1 {vlog -work work -sv C:/Users/jimi/Documents/GitHub/verilog/ethernet/defs.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling package ProtocolInfo
+
+Top level modules:
+	--none--
+
+} {} {}}

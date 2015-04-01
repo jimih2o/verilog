@@ -1,17 +1,1 @@
-C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/fixed_exp.v {1 {vlog -work work C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/fixed_exp.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module fixed_exp
 
-Top level modules:
-	fixed_exp
-
-} {} {}} C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v {1 {vlog -work work C:/Users/jimi/Documents/GitHub/verilog/fixedpointexpo/hwexpo.v
-Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
--- Compiling module hwexpo
--- Compiling module testbench
-
-Top level modules:
-	hwexpo
-	testbench
-
-} {} {}}

@@ -1,118 +1,122 @@
 m255
 K3
+z0
 13
 cModel Technology
-Z0 dC:\Users\jimi\Documents\GitHub\verilog\ethernet
+dC:\Users\jimi\Documents\GitHub\verilog\ethernet
 vdm9000a
-Z1 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
-Z2 DXx4 work 12 ProtocolInfo 0 22 o1LDA8;l^1f24hV_Zdmfi3
-Z3 DXx4 work 15 dm9000a_sv_unit 0 22 6g9Y0G<7]c[`zH`>cQDOn1
-Z4 VmK3k^g9hnZVJ>gOCAP_m92
+Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z1 DXx4 work 12 ProtocolInfo 0 22 6NIgIR@:AXBfVH8[l^2@L2
+DXx4 work 15 dm9000a_sv_unit 0 22 _lUbhkdU]NH7l47=X0BP11
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
 r1
-31
-Z5 I4^ANlYhKn>jlzINl@2SLf2
-S1
-Z6 dC:\Users\jimi\Documents\GitHub\verilog\ethernet
-Z7 w1427838615
-Z8 8C:/Users/jimi/Documents/GitHub/verilog/ethernet/dm9000a.sv
-Z9 FC:/Users/jimi/Documents/GitHub/verilog/ethernet/dm9000a.sv
-L0 6
-Z10 OV;L;10.1d;51
-Z11 !s108 1427842706.203000
-Z12 !s107 C:/Users/jimi/Documents/GitHub/verilog/ethernet/dm9000a.sv|
-Z13 !s90 -reportprogress|300|-work|work|-sv|C:/Users/jimi/Documents/GitHub/verilog/ethernet/dm9000a.sv|
-Z14 o-work work -sv -O0
 !s85 0
-!i10b 1
-Z15 !s100 UBFk8iKnbT4D@Fb04<F[i0
-Z16 !s105 dm9000a_sv_unit
-!s101 -O0
-Xdm9000a_sv_unit
-R1
-R2
-Z17 V6g9Y0G<7]c[`zH`>cQDOn1
-r1
 31
-Z18 I6g9Y0G<7]c[`zH`>cQDOn1
+!i10b 1
+!s100 A1;bjPmb^HPP2aCXD=HOM2
+IKIDCA1CVV4bKM=Fhz42cz1
+!s105 dm9000a_sv_unit
 S1
+Z3 d/home/jimi/git/verilog/ethernet
+Z4 w1427911593
+Z5 8/home/jimi/git/verilog/ethernet/dm9000a.sv
+Z6 F/home/jimi/git/verilog/ethernet/dm9000a.sv
+L0 6
+Z7 OV;L;10.3c;59
+Z8 !s108 1427911622.755050
+Z9 !s107 /home/jimi/git/verilog/ethernet/dm9000a.sv|
+Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/dm9000a.sv|
+!i113 1
+Z11 o-work work -sv
+Xdm9000a_sv_unit
+R0
+R1
+V_lUbhkdU]NH7l47=X0BP11
+r1
+!s85 0
+31
+!i10b 1
+!s100 [ngDlfQH2X`Fz=0j3Ih4B2
+I_lUbhkdU]NH7l47=X0BP11
+!i103 1
+S1
+R3
+R4
+R5
 R6
+L0 2
 R7
 R8
 R9
-L0 2
 R10
+!i113 1
 R11
-R12
-R13
-R14
-!s85 0
-!i10b 1
-Z19 !s100 `hE49QFEbPO6DcEMg:T9V2
-!i103 1
-!s101 -O0
 vethernet_controller
-R1
+R0
+Z12 !s110 1427911622
 !i10b 1
-!s100 E9Qe5z<ON08<[`J4>FiXX0
-IYcibK;:HXWczQ1HZ3Y9;d1
-V1m@@3JTd_VDg>GV@79YkU0
-Z20 !s105 ethernet_controller_sv_unit
+!s100 nNNh93`zZI06QOJ5^T_5B3
+IdKab8:=j2YLY>QfR9S>:31
+R2
+Z13 !s105 ethernet_controller_sv_unit
 S1
-R6
-Z21 w1427842527
-Z22 8C:/Users/jimi/Documents/GitHub/verilog/ethernet/ethernet_controller.sv
-Z23 FC:/Users/jimi/Documents/GitHub/verilog/ethernet/ethernet_controller.sv
+R3
+Z14 w1427907776
+Z15 8/home/jimi/git/verilog/ethernet/ethernet_controller.sv
+Z16 F/home/jimi/git/verilog/ethernet/ethernet_controller.sv
 L0 6
-R10
-r1
-!s85 0
-31
-Z24 !s108 1427842706.640000
-Z25 !s107 C:/Users/jimi/Documents/GitHub/verilog/ethernet/ethernet_controller.sv|
-Z26 !s90 -reportprogress|300|-work|work|-sv|C:/Users/jimi/Documents/GitHub/verilog/ethernet/ethernet_controller.sv|
-!s101 -O0
-R14
-XProtocolInfo
-R1
-Z27 Io1LDA8;l^1f24hV_Zdmfi3
-Z28 Vo1LDA8;l^1f24hV_Zdmfi3
-S1
-R6
 R7
-Z29 8C:/Users/jimi/Documents/GitHub/verilog/ethernet/defs.sv
-Z30 FC:/Users/jimi/Documents/GitHub/verilog/ethernet/defs.sv
-L0 1
-R10
 r1
-31
-R14
-Z31 n@protocol@info
-Z32 !s100 IjfTElkG>YQE3_MONf>Rn3
-Z33 !s108 1427842705.828000
-Z34 !s107 C:/Users/jimi/Documents/GitHub/verilog/ethernet/defs.sv|
-Z35 !s90 -reportprogress|300|-work|work|-sv|C:/Users/jimi/Documents/GitHub/verilog/ethernet/defs.sv|
-!i10b 1
 !s85 0
-!s101 -O0
-vtestbench
-R1
+31
+Z17 !s108 1427911622.731833
+Z18 !s107 /home/jimi/git/verilog/ethernet/ethernet_controller.sv|
+Z19 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/ethernet_controller.sv|
+!i113 1
+R11
+XProtocolInfo
+R0
+R12
 !i10b 1
-!s100 VO]ZU4OYUNVK@XOcUm6CW3
-I<D5TK[E:fEm6Q5Ki<?9CR1
-VhGfW:390DM[oDMzegDH9`2
-R20
+!s100 MU<R6K9@HdPH3mk5j5AAB2
+I6NIgIR@:AXBfVH8[l^2@L2
+V6NIgIR@:AXBfVH8[l^2@L2
 S1
-R6
-R21
-R22
-R23
-L0 60
-R10
+R3
+w1427821268
+8/home/jimi/git/verilog/ethernet/defs.sv
+F/home/jimi/git/verilog/ethernet/defs.sv
+L0 1
+R7
 r1
 !s85 0
 31
-R24
-R25
-R26
-!s101 -O0
+!s108 1427911622.778931
+!s107 /home/jimi/git/verilog/ethernet/defs.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/defs.sv|
+!i113 1
+R11
+n@protocol@info
+vtestbench
+R0
+R12
+!i10b 1
+!s100 H?JMX6US`<f[XeOe`EfY:3
+I2HLKh5T1Sc0YzeI@RS4QG0
+R2
+R13
+S1
+R3
 R14
+R15
+R16
+L0 60
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R11

@@ -1,17 +1,5 @@
 # Loading project ethernet
 # Compile of ethernet_controller.sv was successful.
-# Compile of dm9000a.sv was successful.
-# 2 compiles, 0 failed with no errors.
-# Compile of ethernet_controller.sv was successful.
-# Compile of dm9000a.sv failed with 1 errors.
-# Compile of defs.sv was successful.
-# 3 compiles, 1 failed with 1 error.
-# Compile of defs.sv was successful.
-# Compile of ethernet_controller.sv was successful.
-# Compile of dm9000a.sv failed with 1 errors.
-# Compile of defs.sv was successful.
-# 3 compiles, 1 failed with 1 error.
-# Compile of ethernet_controller.sv was successful.
 # Compile of dm9000a.sv failed with 1 errors.
 # Compile of defs.sv was successful.
 # 3 compiles, 1 failed with 1 error.
@@ -19,3 +7,14 @@
 # Compile of dm9000a.sv was successful.
 # Compile of defs.sv was successful.
 # 3 compiles, 0 failed with no errors.
+vsim work.testbench
+# vsim 
+# Start time: 11:07:15 on Apr 01,2015
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.ProtocolInfo
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+# End time: 12:05:14 on Apr 01,2015, Elapsed time: 0:57:59
+# Errors: 0, Warnings: 0

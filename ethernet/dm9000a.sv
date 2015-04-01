@@ -25,12 +25,12 @@ logic clock_25mhz = 1'b0 ;
 integer write_counter = 0 ;
 
 logic [15:0] data = 0 ;
-logic 
-        cmd = Data,     // when cmd = 1, in DATA mode (cmd = 0 -> INDEX mode)
-        cs  = 1'b0,    // Active low
-        rd  = 1'b0,    // Active low 
-        wr  = 1'b0,    // Active low
-        rst = 1'b0 ;  // Active low, signal to initiate dm9000a (ready after 5us). Assert for at least 20ms
+logic
+        cmd = Data,  // when cmd = 1, in DATA mode (cmd = 0 -> INDEX mode)
+        cs  = 1'b0,  // Active low
+        rd  = 1'b0,  // Active low
+        wr  = 1'b0,  // Active low
+        rst = 1'b0 ; // Active low, signal to initiate dm9000a (ready after 5us). Assert for at least 20ms
 
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// WRITE
@@ -60,7 +60,7 @@ begin
 	if (write_counter == 10) begin
 		write_counter <= 0 ;
                 dm_write <= 1'b1 ;
-	end else begin 
+	end else begin
 		write_counter <= write_counter + 1 ;
                 dm_write <= 1'b0 ;
 	end
@@ -73,18 +73,18 @@ function Write ;
 input [15:0] addr ;
 input [15:0] value ;
 
-reg state = 1'b0 ;
+static reg state = 1'b0 ;
 
 begin
         case (state)
-        0: begin
+        1'b0: begin
                 Write <= 1'b0 ;
                 if (dm_write(addr, Index))
                         state <= 1'b1 ;
                 else
                         state <= 1'b0 ;
            end
-        1: begin
+        1'b1: begin
                 if (dm_write(value, Data)) begin
                         state <= 1'b0 ;
                         Write <= 1'b1 ;
@@ -128,7 +128,7 @@ end
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// Main logic
 always_ff @(clk100) begin
-	
+        
 end
 
 endmodule

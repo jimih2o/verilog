@@ -2,7 +2,7 @@
 /// Top Level Module for ethernet interface
 // inputs:
 //	GPIO_1
-//	PLL'd clock 50 -> 100	
+//	PLL'd clock 50 -> 100
 module ethernet_controller(CLK, GPIO_1) ;
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// Ports
@@ -13,7 +13,8 @@ input [15:0] GPIO_1 ;
 /// Var
 // data buffer
 logic [15:0] data_buffer[17:0] ;
-// keeps track of how many ticks have passed for each sample  
+logic clear_to_send = 0 ;
+// keeps track of how many ticks have passed for each sample
 integer clock_counter = 0 ;
 integer sample_index = 0 ;
 
@@ -35,20 +36,23 @@ dm9000a DM9000A(.*, .clk100(CLK)) ;
 // 5,556ns
 // rounding to nearest 10ns
 // 5,560ns
-// 556 clocks between samples 
+// 556 clocks between samples
 always_ff @(CLK) begin
 	if (clock_counter == 556) begin
 		clock_counter <= 0 ;
-		
+
 		data_buffer[sample_index] <= GPIO_1 ;
-		
+
 		if (sample_index == 17) begin
 			sample_index <= 0 ;
+			clear_to_send <= 1 ;
 		end else begin
 			sample_index <= sample_index + 1 ;
+			clear_to_send <= 0 ;
 		end
 	end else begin
 		clock_counter <= clock_counter + 1 ;
+		clear_to_send <= 0 ;
 	end
 end
 
@@ -68,12 +72,12 @@ ethernet_controller enet(clk, in) ;
 
 initial begin : blk1
 	logic [15:0] i ;
-	
+
 	// Test Sampling
 	for (i = 0; i < 18; i = i + 1) begin
 		in = i ; #5570 ;
 	end
-	
+
 	for (i = 0; i < 18; i = i + 1) begin
 		$display("snapshot[%d] = %d", i, enet.data_buffer[i]) ;
 	end

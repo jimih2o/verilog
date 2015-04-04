@@ -13,6 +13,9 @@ input [15:0] GPIO_1 ;
 /// Var
 // data buffer
 logic [15:0] data_buffer[17:0] ;
+parameter packet_length = 68 ;
+logic [15:0] packet[packet_length-1:0] ;
+
 logic clear_to_send = 0 ;
 // keeps track of how many ticks have passed for each sample
 integer clock_counter = 0 ;
@@ -24,6 +27,46 @@ logic ENET_CLK, ENET_CMD, ENET_CS_N, ENET_INT, ENET_RD_N, ENET_WR_N, ENET_RST_N 
 // synthesis translate on
 
 dm9000a DM9000A(.*, .clk100(CLK)) ;
+
+// \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
+/// Generate Packet
+//		DATA
+// 	    UDP DATA
+//       IP UDP DATA
+//  ETHO IP UDP DATA
+function void GeneratePacket ;
+begin : PacketCreationBlk
+	integer i ;
+
+	// DATA ////
+	// build packet from the top down
+	for (i = 0; i < 18; i = i + 1) begin
+		packet[packet_length - i - 1] <= data_buffer[i] ;
+	end
+
+	// UDP ////
+	// add in UDP header
+	// 0[source port]16[dest port]32[length]48[checksum]
+	// checksum
+	// length
+	// dest port
+	// source port
+
+
+	// IP ////
+	// ip dest
+	// ip source
+	// IP check sum
+	// IP information
+
+
+	// ETHO ////
+	// MAC src (0-10)
+	// MAC dest
+	// ethernet framing
+	// preamble
+end
+endfunction
 
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// Sampling
@@ -46,6 +89,7 @@ always_ff @(CLK) begin
 		if (sample_index == 17) begin
 			sample_index <= 0 ;
 			clear_to_send <= 1 ;
+			GeneratePacket() ;
 		end else begin
 			sample_index <= sample_index + 1 ;
 			clear_to_send <= 0 ;

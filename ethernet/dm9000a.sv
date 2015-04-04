@@ -3,7 +3,7 @@ import ProtocolInfo::* ;
 
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// DM9000A chip interface module instantiation
-module dm9000a(clk100, data_buffer, clear_to_send, ENET_DATA, ENET_CLK, ENET_CMD, ENET_CS_N, ENET_INT, ENET_RD_N, ENET_WR_N, ENET_RST_N) ;
+module dm9000a(clk100, packet, clear_to_send, packet_length, ENET_DATA, ENET_CLK, ENET_CMD, ENET_CS_N, ENET_INT, ENET_RD_N, ENET_WR_N, ENET_RST_N) ;
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// Parameters for dm9000a
 parameter Low = 1'b1 ;
@@ -14,8 +14,9 @@ parameter Index = 1'b0 ;
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// Ports
 input clk100 ;
-input [15:0] data_buffer[17:0] ;
+input [15:0] packet[67:0] ;
 input clear_to_send ;
+input [15:0] packet_length ;
 
 output [15:0] ENET_DATA ;
 input ENET_INT ; // 'high active' at default
@@ -148,7 +149,7 @@ end
 
 // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
 /// Main logic
-always_ff @(clk100) begin
+always_ff @(posedge clk100 or posedge ENET_INT) begin
         case (state_machine) inside
         // hw reset
         0: begin
@@ -220,6 +221,7 @@ always_ff @(clk100) begin
                 end
         end
 
+        // tell the dm9000a that we're going to fill sram
         21: begin
                 if (dm_write(16'hF8, Index, 16)) begin
                         state_machine <= 22 ;
@@ -228,18 +230,29 @@ always_ff @(clk100) begin
                 end
         end
 
+        // write the packet into sram
         22: begin
-                if (data_index == 18) begin
+                if (data_index == packet_length) begin
                         data_index <= 0 ;
-                        state_machine <= 20 ;
+                        state_machine <= 23 ;
                 end else begin
-                        if (dm_write(data_buffer[data_index], Data, 16)) begin
+                        if (dm_write(packet[data_index], Data, 16)) begin
                                 data_index <= data_index + 1 ;
                         end else begin // avoid latch
                                 data_index <= data_index + 0 ;
                         end
                 end
         end
+
+        // tell the dm9000a the packet length
+        23: StateMachineEdge(16'hFD, (packet_length >> 16'd8) & 16'hFF, 16, 23, 24) ;
+        24: StateMachineEdge(16'hFC, (packet_length) & 16'hFF, 16, 24, 25) ;
+
+        // request TX
+        25: StateMachineEdge(16'h02, 16'h01, 16, 25,26) ;
+
+        // pull for TX complete
+        26: if (ENET_INT) state_machine <= 20 ; else state_machine <= 26 ;
 
         default: begin
                 $display("Invalid state in dm9000a controller module, state=%d", state_machine) ;

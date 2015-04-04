@@ -1,12 +1,4 @@
-/home/jimi/git/verilog/ethernet/ethernet_controller.sv {1 {vlog -work work -sv -stats=none /home/jimi/git/verilog/ethernet/ethernet_controller.sv
-Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
--- Compiling module ethernet_controller
--- Compiling module testbench
-
-Top level modules:
-	testbench
-
-} {} {}} /home/jimi/git/verilog/ethernet/defs.sv {1 {vlog -work work -sv -stats=none /home/jimi/git/verilog/ethernet/defs.sv
+/home/jimi/git/verilog/ethernet/defs.sv {1 {vlog -work work -sv -stats=none /home/jimi/git/verilog/ethernet/defs.sv
 Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
 -- Compiling package ProtocolInfo
 
@@ -18,12 +10,11 @@ Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
 -- Compiling package dm9000a_sv_unit
 -- Importing package ProtocolInfo
 -- Compiling module dm9000a
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(169): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(171): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(173): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(181): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(184): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(188): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(170): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(172): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(174): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(182): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(185): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
 ** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(189): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
 ** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(190): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
 ** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(191): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
@@ -31,11 +22,15 @@ Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
 ** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(193): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
 ** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(194): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
 ** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(195): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(197): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(196): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
 ** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(198): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(200): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(203): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
-** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(112): (vlog-2250) Function "StateMachineEdge" has no return value assignment.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(199): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(201): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(204): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(248): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(249): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(252): (vlog-2240) Treating stand-alone use of function 'StateMachineEdge' as an implicit VOID cast.
+** Warning: /home/jimi/git/verilog/ethernet/dm9000a.sv(113): (vlog-2250) Function "StateMachineEdge" has no return value assignment.
 
 Top level modules:
 	dm9000a

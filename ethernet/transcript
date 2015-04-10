@@ -1,5 +1,708 @@
 # Loading project ethernet
 # Compile of ethernet_controller.sv was successful.
-# Compile of dm9000a.sv was successful with warnings.
+# Compile of dm9000a.sv was successful.
 # Compile of defs.sv was successful.
 # 3 compiles, 0 failed with no errors.
+vsim work.testbench
+# vsim 
+# Start time: 14:13:18 on Apr 10,2015
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     0
+# snapshot[    1] =     1
+# snapshot[    2] =     2
+# snapshot[    3] =     3
+# snapshot[    4] =     4
+# snapshot[    5] =     5
+# snapshot[    6] =     6
+# snapshot[    7] =     7
+# snapshot[    8] =     8
+# snapshot[    9] =     9
+# snapshot[   10] =    10
+# snapshot[   11] =    11
+# snapshot[   12] =    12
+# snapshot[   13] =    13
+# snapshot[   14] =    14
+# snapshot[   15] =    15
+# snapshot[   16] =    16
+# snapshot[   17] =    17
+# packet[    0] =     x
+# packet[    1] =     x
+# packet[    2] =     x
+# packet[    3] =     x
+# packet[    4] =     x
+# packet[    5] =     x
+# packet[    6] =     x
+# packet[    7] =     x
+# packet[    8] =     x
+# packet[    9] =     x
+# packet[   10] =     x
+# packet[   11] =     x
+# packet[   12] =     x
+# packet[   13] =     x
+# packet[   14] =     x
+# packet[   15] =     x
+# packet[   16] = 17487
+# packet[   17] = 54956
+# packet[   18] =  4660
+# packet[   19] = 22136
+# packet[   20] = 39612
+# packet[   21] =  8000
+# packet[   22] =  8000
+# packet[   23] =    44
+# packet[   24] =     0
+# packet[   25] =    17
+# packet[   26] =    16
+# packet[   27] =    15
+# packet[   28] =    14
+# packet[   29] =    13
+# packet[   30] =    12
+# packet[   31] =    11
+# packet[   32] =    10
+# packet[   33] =     9
+# packet[   34] =     8
+# packet[   35] =     7
+# packet[   36] =     6
+# packet[   37] =     5
+# packet[   38] =     4
+# packet[   39] =     3
+# packet[   40] =     2
+# packet[   41] =     1
+# packet[   42] =     0
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     x
+# snapshot[    1] =     x
+# snapshot[    2] =     x
+# snapshot[    3] =     x
+# snapshot[    4] =     x
+# snapshot[    5] =     x
+# snapshot[    6] =     x
+# snapshot[    7] =     x
+# snapshot[    8] =     0
+# snapshot[    9] =     1
+# snapshot[   10] =     2
+# snapshot[   11] =     3
+# snapshot[   12] =     4
+# snapshot[   13] =     5
+# snapshot[   14] =     6
+# snapshot[   15] =     7
+# snapshot[   16] =     8
+# snapshot[   17] =     9
+# packet[    0] = 21845
+# packet[    1] = 21845
+# packet[    2] = 21845
+# packet[    3] = 21973
+# packet[    4] =     x
+# packet[    5] =     x
+# packet[    6] =     x
+# packet[    7] =     x
+# packet[    8] =     x
+# packet[    9] =     x
+# packet[   10] =     x
+# packet[   11] =     x
+# packet[   12] =     x
+# packet[   13] =     x
+# packet[   14] =     x
+# packet[   15] = 10450
+# packet[   16] = 17487
+# packet[   17] = 54956
+# packet[   18] =  4660
+# packet[   19] = 22136
+# packet[   20] = 39612
+# packet[   21] =  8000
+# packet[   22] =  8000
+# packet[   23] =    44
+# packet[   24] =     0
+# packet[   25] =    17
+# packet[   26] =    17
+# packet[   27] =    17
+# packet[   28] =    17
+# packet[   29] =    17
+# packet[   30] =    17
+# packet[   31] =    17
+# packet[   32] =    17
+# packet[   33] =    17
+# packet[   34] =    17
+# packet[   35] =    17
+# packet[   36] =    17
+# packet[   37] =    17
+# packet[   38] =    17
+# packet[   39] =    17
+# packet[   40] =    17
+# packet[   41] =    17
+# packet[   42] =    17
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     x
+# snapshot[    1] =     x
+# snapshot[    2] =     x
+# snapshot[    3] =     x
+# snapshot[    4] =     x
+# snapshot[    5] =     x
+# snapshot[    6] =     x
+# snapshot[    7] =     x
+# snapshot[    8] =     0
+# snapshot[    9] =     1
+# snapshot[   10] =     2
+# snapshot[   11] =     3
+# snapshot[   12] =     4
+# snapshot[   13] =     5
+# snapshot[   14] =     6
+# snapshot[   15] =     7
+# snapshot[   16] =     8
+# snapshot[   17] =     9
+# packet[    0] = 21845
+# packet[    1] = 21845
+# packet[    2] = 21845
+# packet[    3] = 21973
+# packet[    4] =     x
+# packet[    5] =     x
+# packet[    6] =     x
+# packet[    7] =     x
+# packet[    8] =     x
+# packet[    9] =     x
+# packet[   10] =     x
+# packet[   11] =     x
+# packet[   12] =     x
+# packet[   13] =     x
+# packet[   14] =     x
+# packet[   15] = 10450
+# packet[   16] = 17487
+# packet[   17] = 54956
+# packet[   18] =  4660
+# packet[   19] = 22136
+# packet[   20] = 39612
+# packet[   21] =  8000
+# packet[   22] =  8000
+# packet[   23] =    44
+# packet[   24] =     0
+# packet[   25] =    17
+# packet[   26] =    17
+# packet[   27] =    17
+# packet[   28] =    17
+# packet[   29] =    17
+# packet[   30] =    17
+# packet[   31] =    17
+# packet[   32] =    17
+# packet[   33] =    17
+# packet[   34] =    17
+# packet[   35] =    17
+# packet[   36] =    17
+# packet[   37] =    17
+# packet[   38] =    17
+# packet[   39] =    17
+# packet[   40] =    17
+# packet[   41] =    17
+# packet[   42] =    17
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+# ** Error: (vsim-3906) /home/jimi/git/verilog/ethernet/ethernet_controller.sv(35): Connection type 'reg[15:0]$[31:0]' is incompatible with 'wire[15:0]$[42:0]' for  port (packet):  Array ranges [42:0] & [31:0] have different lengths.
+#         Region: /testbench/enet/DM9000A
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# Break key hit
+vsim work.testbench
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+# ** Error: (vsim-3906) /home/jimi/git/verilog/ethernet/ethernet_controller.sv(35): Connection type 'reg[15:0]$[31:0]' is incompatible with 'wire[15:0]$[30:0]' for  port (packet):  Array ranges [30:0] & [31:0] have different lengths.
+#         Region: /testbench/enet/DM9000A
+# Error loading design
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim work.testbench
+# vsim 
+# Start time: 14:47:43 on Apr 10,2015
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     x
+# snapshot[    1] =     x
+# snapshot[    2] =     x
+# snapshot[    3] =     x
+# snapshot[    4] =     x
+# snapshot[    5] =     x
+# snapshot[    6] =     x
+# snapshot[    7] =     x
+# snapshot[    8] =     0
+# snapshot[    9] =     1
+# snapshot[   10] =     2
+# snapshot[   11] =     3
+# snapshot[   12] =     4
+# snapshot[   13] =     5
+# snapshot[   14] =     6
+# snapshot[   15] =     7
+# snapshot[   16] =     8
+# snapshot[   17] =     9
+# packet[    0] = 21845
+# packet[    1] = 21845
+# packet[    2] = 21845
+# packet[    3] = 21973
+# packet[    4] = 10450
+# packet[    5] = 17487
+# packet[    6] = 54956
+# packet[    7] =  4660
+# packet[    8] = 22136
+# packet[    9] = 39612
+# packet[   10] =  8000
+# packet[   11] =  8000
+# packet[   12] =    44
+# packet[   13] =     0
+# packet[   14] =    17
+# packet[   15] =    17
+# packet[   16] =    17
+# packet[   17] =    17
+# packet[   18] =    17
+# packet[   19] =    17
+# packet[   20] =    17
+# packet[   21] =    17
+# packet[   22] =    17
+# packet[   23] =    17
+# packet[   24] =    17
+# packet[   25] =    17
+# packet[   26] =    17
+# packet[   27] =    17
+# packet[   28] =    17
+# packet[   29] =    17
+# packet[   30] =    17
+# packet[   31] =    17
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     x
+# snapshot[    1] =     x
+# snapshot[    2] =     x
+# snapshot[    3] =     x
+# snapshot[    4] =     x
+# snapshot[    5] =     x
+# snapshot[    6] =     x
+# snapshot[    7] =     x
+# snapshot[    8] =     0
+# snapshot[    9] =     1
+# snapshot[   10] =     2
+# snapshot[   11] =     3
+# snapshot[   12] =     4
+# snapshot[   13] =     5
+# snapshot[   14] =     6
+# snapshot[   15] =     7
+# snapshot[   16] =     8
+# snapshot[   17] =     9
+# packet[    0] = 5555
+# packet[    1] = 5555
+# packet[    2] = 5555
+# packet[    3] = 55d5
+# packet[    4] = 28d2
+# packet[    5] = 444f
+# packet[    6] = d6ac
+# packet[    7] = 1234
+# packet[    8] = 5678
+# packet[    9] = 9abc
+# packet[   10] = 1f40
+# packet[   11] = 1f40
+# packet[   12] = 002c
+# packet[   13] = 0000
+# packet[   14] = 0011
+# packet[   15] = 0011
+# packet[   16] = 0011
+# packet[   17] = 0011
+# packet[   18] = 0011
+# packet[   19] = 0011
+# packet[   20] = 0011
+# packet[   21] = 0011
+# packet[   22] = 0011
+# packet[   23] = 0011
+# packet[   24] = 0011
+# packet[   25] = 0011
+# packet[   26] = 0011
+# packet[   27] = 0011
+# packet[   28] = 0011
+# packet[   29] = 0011
+# packet[   30] = 0011
+# packet[   31] = 0011
+# Compile of ethernet_controller.sv was successful.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     x
+# snapshot[    1] =     x
+# snapshot[    2] =     x
+# snapshot[    3] =     x
+# snapshot[    4] =     x
+# snapshot[    5] =     x
+# snapshot[    6] =     x
+# snapshot[    7] =     x
+# snapshot[    8] =     0
+# snapshot[    9] =     0
+# snapshot[   10] =     1
+# snapshot[   11] =     2
+# snapshot[   12] =     3
+# snapshot[   13] =     4
+# snapshot[   14] =     5
+# snapshot[   15] =     6
+# snapshot[   16] =     7
+# snapshot[   17] =     8
+# packet[    0] = 5555
+# packet[    1] = 5555
+# packet[    2] = 5555
+# packet[    3] = 55d5
+# packet[    4] = 28d2
+# packet[    5] = 444f
+# packet[    6] = d6ac
+# packet[    7] = 1234
+# packet[    8] = 5678
+# packet[    9] = 9abc
+# packet[   10] = 1f40
+# packet[   11] = 1f40
+# packet[   12] = 002c
+# packet[   13] = 0000
+# packet[   14] = 0011
+# packet[   15] = 0011
+# packet[   16] = 0011
+# packet[   17] = 0011
+# packet[   18] = 0011
+# packet[   19] = 0011
+# packet[   20] = 0011
+# packet[   21] = 0011
+# packet[   22] = 0011
+# packet[   23] = 0011
+# packet[   24] = 0011
+# packet[   25] = 0011
+# packet[   26] = 0011
+# packet[   27] = 0011
+# packet[   28] = 0011
+# packet[   29] = 0011
+# packet[   30] = 0011
+# packet[   31] = 0011
+# Compile of ethernet_controller.sv was successful with warnings.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     x
+# snapshot[    1] =     x
+# snapshot[    2] =     x
+# snapshot[    3] =     x
+# snapshot[    4] =     x
+# snapshot[    5] =     x
+# snapshot[    6] =     x
+# snapshot[    7] =     x
+# snapshot[    8] =     0
+# snapshot[    9] =     0
+# snapshot[   10] =     1
+# snapshot[   11] =     2
+# snapshot[   12] =     3
+# snapshot[   13] =     4
+# snapshot[   14] =     5
+# snapshot[   15] =     6
+# snapshot[   16] =     7
+# snapshot[   17] =     8
+# packet[    0] = 5555
+# packet[    1] = 5555
+# packet[    2] = 5555
+# packet[    3] = 55d5
+# packet[    4] = 28d2
+# packet[    5] = 444f
+# packet[    6] = d6ac
+# packet[    7] = 1234
+# packet[    8] = 5678
+# packet[    9] = 9abc
+# packet[   10] = 1f40
+# packet[   11] = 1f40
+# packet[   12] = 002c
+# packet[   13] = 0000
+# packet[   14] = 0011
+# packet[   15] = 0011
+# packet[   16] = 0011
+# packet[   17] = 0011
+# packet[   18] = 0011
+# packet[   19] = 0011
+# packet[   20] = 0011
+# packet[   21] = 0011
+# packet[   22] = 0011
+# packet[   23] = 0011
+# packet[   24] = 0011
+# packet[   25] = 0011
+# packet[   26] = 0011
+# packet[   27] = 0011
+# packet[   28] = 0011
+# packet[   29] = 0011
+# packet[   30] = 0011
+# packet[   31] = 0011
+# Compile of ethernet_controller.sv was successful with warnings.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     x
+# snapshot[    1] =     x
+# snapshot[    2] =     x
+# snapshot[    3] =     x
+# snapshot[    4] =     x
+# snapshot[    5] =     x
+# snapshot[    6] =     x
+# snapshot[    7] =     x
+# snapshot[    8] =     0
+# snapshot[    9] =     1
+# snapshot[   10] =     2
+# snapshot[   11] =     3
+# snapshot[   12] =     4
+# snapshot[   13] =     5
+# snapshot[   14] =     6
+# snapshot[   15] =     7
+# snapshot[   16] =     8
+# snapshot[   17] =     9
+# packet[    0] = 5555
+# packet[    1] = 5555
+# packet[    2] = 5555
+# packet[    3] = 55d5
+# packet[    4] = 28d2
+# packet[    5] = 444f
+# packet[    6] = d6ac
+# packet[    7] = 1234
+# packet[    8] = 5678
+# packet[    9] = 9abc
+# packet[   10] = 1f40
+# packet[   11] = 1f40
+# packet[   12] = 002c
+# packet[   13] = 0000
+# packet[   14] = 0011
+# packet[   15] = 0011
+# packet[   16] = 0011
+# packet[   17] = 0011
+# packet[   18] = 0011
+# packet[   19] = 0011
+# packet[   20] = 0011
+# packet[   21] = 0011
+# packet[   22] = 0011
+# packet[   23] = 0011
+# packet[   24] = 0011
+# packet[   25] = 0011
+# packet[   26] = 0011
+# packet[   27] = 0011
+# packet[   28] = 0011
+# packet[   29] = 0011
+# packet[   30] = 0011
+# packet[   31] = 0011
+# Compile of ethernet_controller.sv was successful with warnings.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     x
+# snapshot[    1] =     x
+# snapshot[    2] =     x
+# snapshot[    3] =     x
+# snapshot[    4] =     x
+# snapshot[    5] =     x
+# snapshot[    6] =     x
+# snapshot[    7] =     x
+# snapshot[    8] =     0
+# snapshot[    9] =     1
+# snapshot[   10] =     2
+# snapshot[   11] =     3
+# snapshot[   12] =     4
+# snapshot[   13] =     5
+# snapshot[   14] =     6
+# snapshot[   15] =     7
+# snapshot[   16] =     8
+# snapshot[   17] =     9
+# packet[    0] = 5555
+# packet[    1] = 5555
+# packet[    2] = 5555
+# packet[    3] = 55d5
+# packet[    4] = 28d2
+# packet[    5] = 444f
+# packet[    6] = d6ac
+# packet[    7] = 1234
+# packet[    8] = 5678
+# packet[    9] = 9abc
+# packet[   10] = 1f40
+# packet[   11] = 1f40
+# packet[   12] = 002c
+# packet[   13] = 0000
+# packet[   14] = 0011
+# packet[   15] = 0011
+# packet[   16] = 0011
+# packet[   17] = 0011
+# packet[   18] = 0011
+# packet[   19] = 0011
+# packet[   20] = 0011
+# packet[   21] = 0011
+# packet[   22] = 0011
+# packet[   23] = 0011
+# packet[   24] = 0011
+# packet[   25] = 0011
+# packet[   26] = 0011
+# packet[   27] = 0011
+# packet[   28] = 0011
+# packet[   29] = 0011
+# packet[   30] = 0011
+# packet[   31] = 0011
+# Compile of ethernet_controller.sv was successful with warnings.
+# Compile of dm9000a.sv was successful.
+# Compile of defs.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading sv_std.std
+# Loading work.ProtocolInfo
+# Loading work.ethernet_controller_sv_unit
+# Loading work.testbench
+# Loading work.ethernet_controller
+# Loading work.dm9000a_sv_unit
+# Loading work.dm9000a
+run
+# snapshot[    0] =     x
+# snapshot[    1] =     x
+# snapshot[    2] =     x
+# snapshot[    3] =     x
+# snapshot[    4] =     x
+# snapshot[    5] =     x
+# snapshot[    6] =     x
+# snapshot[    7] =     x
+# snapshot[    8] =     0
+# snapshot[    9] =     0
+# snapshot[   10] =     1
+# snapshot[   11] =     2
+# snapshot[   12] =     3
+# snapshot[   13] =     4
+# snapshot[   14] =     5
+# snapshot[   15] =     6
+# snapshot[   16] =     7
+# snapshot[   17] =     8
+# packet[    0] = 5555
+# packet[    1] = 5555
+# packet[    2] = 5555
+# packet[    3] = 55d5
+# packet[    4] = 28d2
+# packet[    5] = 444f
+# packet[    6] = d6ac
+# packet[    7] = 1234
+# packet[    8] = 5678
+# packet[    9] = 9abc
+# packet[   10] = 1f40
+# packet[   11] = 1f40
+# packet[   12] = 002c
+# packet[   13] = 0000
+# packet[   14] = 0020
+# packet[   15] = 0020
+# packet[   16] = 0020
+# packet[   17] = 0020
+# packet[   18] = 0020
+# packet[   19] = 0020
+# packet[   20] = 0020
+# packet[   21] = 0020
+# packet[   22] = 0020
+# packet[   23] = 0020
+# packet[   24] = 0020
+# packet[   25] = 0020
+# packet[   26] = 0020
+# packet[   27] = 0020
+# packet[   28] = 0020
+# packet[   29] = 0020
+# packet[   30] = 0020
+# packet[   31] = 0020
+# End time: 14:57:30 on Apr 10,2015, Elapsed time: 0:09:47
+# Errors: 0, Warnings: 0

@@ -1,0 +1,937 @@
+Analysis & Synthesis report for ethernet_controller
+Fri Apr 10 15:47:00 2015
+Quartus II 32-bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |ethernet_controller
+ 14. Parameter Settings for User Entity Instance: dm9000a:DM9000A
+ 15. Port Connectivity Checks: "dm9000a:DM9000A"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Apr 10 15:47:00 2015      ;
+; Quartus II 32-bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; ethernet_controller                        ;
+; Top-level Entity Name              ; ethernet_controller                        ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; 1,675                                      ;
+;     Total combinational functions  ; 1,224                                      ;
+;     Dedicated logic registers      ; 583                                        ;
+; Total registers                    ; 583                                        ;
+; Total pins                         ; 40                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                          ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+; Option                                                                     ; Setting             ; Default Value       ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+; Device                                                                     ; EP2C35F672C6        ;                     ;
+; Top-level entity name                                                      ; ethernet_controller ; ethernet_controller ;
+; Family name                                                                ; Cyclone II          ; Cyclone IV GX       ;
+; Use smart compilation                                                      ; Off                 ; Off                 ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                  ; On                  ;
+; Enable compact report table                                                ; Off                 ; Off                 ;
+; Restructure Multiplexers                                                   ; Auto                ; Auto                ;
+; Create Debugging Nodes for IP Cores                                        ; Off                 ; Off                 ;
+; Preserve fewer node names                                                  ; On                  ; On                  ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                 ; Off                 ;
+; Verilog Version                                                            ; Verilog_2001        ; Verilog_2001        ;
+; VHDL Version                                                               ; VHDL_1993           ; VHDL_1993           ;
+; State Machine Processing                                                   ; Auto                ; Auto                ;
+; Safe State Machine                                                         ; Off                 ; Off                 ;
+; Extract Verilog State Machines                                             ; On                  ; On                  ;
+; Extract VHDL State Machines                                                ; On                  ; On                  ;
+; Ignore Verilog initial constructs                                          ; Off                 ; Off                 ;
+; Iteration limit for constant Verilog loops                                 ; 5000                ; 5000                ;
+; Iteration limit for non-constant Verilog loops                             ; 250                 ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                  ; On                  ;
+; Infer RAMs from Raw Logic                                                  ; On                  ; On                  ;
+; Parallel Synthesis                                                         ; On                  ; On                  ;
+; DSP Block Balancing                                                        ; Auto                ; Auto                ;
+; NOT Gate Push-Back                                                         ; On                  ; On                  ;
+; Power-Up Don't Care                                                        ; On                  ; On                  ;
+; Remove Redundant Logic Cells                                               ; Off                 ; Off                 ;
+; Remove Duplicate Registers                                                 ; On                  ; On                  ;
+; Ignore CARRY Buffers                                                       ; Off                 ; Off                 ;
+; Ignore CASCADE Buffers                                                     ; Off                 ; Off                 ;
+; Ignore GLOBAL Buffers                                                      ; Off                 ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                 ; Off                 ;
+; Ignore LCELL Buffers                                                       ; Off                 ; Off                 ;
+; Ignore SOFT Buffers                                                        ; On                  ; On                  ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                 ; Off                 ;
+; Optimization Technique                                                     ; Balanced            ; Balanced            ;
+; Carry Chain Length                                                         ; 70                  ; 70                  ;
+; Auto Carry Chains                                                          ; On                  ; On                  ;
+; Auto Open-Drain Pins                                                       ; On                  ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                 ; Off                 ;
+; Auto ROM Replacement                                                       ; On                  ; On                  ;
+; Auto RAM Replacement                                                       ; On                  ; On                  ;
+; Auto Shift Register Replacement                                            ; Auto                ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                ; Auto                ;
+; Auto Clock Enable Replacement                                              ; On                  ; On                  ;
+; Strict RAM Replacement                                                     ; Off                 ; Off                 ;
+; Allow Synchronous Control Signals                                          ; On                  ; On                  ;
+; Force Use of Synchronous Clear Signals                                     ; Off                 ; Off                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                 ; Off                 ;
+; Auto Resource Sharing                                                      ; Off                 ; Off                 ;
+; Allow Any RAM Size For Recognition                                         ; Off                 ; Off                 ;
+; Allow Any ROM Size For Recognition                                         ; Off                 ; Off                 ;
+; Allow Any Shift Register Size For Recognition                              ; Off                 ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                  ; On                  ;
+; Ignore translate_off and synthesis_off directives                          ; Off                 ; Off                 ;
+; Timing-Driven Synthesis                                                    ; Off                 ; Off                 ;
+; Report Parameter Settings                                                  ; On                  ; On                  ;
+; Report Source Assignments                                                  ; On                  ; On                  ;
+; Report Connectivity Checks                                                 ; On                  ; On                  ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                 ; Off                 ;
+; Synchronization Register Chain Length                                      ; 2                   ; 2                   ;
+; PowerPlay Power Optimization                                               ; Normal compilation  ; Normal compilation  ;
+; HDL message level                                                          ; Level2              ; Level2              ;
+; Suppress Register Optimization Related Messages                            ; Off                 ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                 ; 100                 ;
+; Clock MUX Protection                                                       ; On                  ; On                  ;
+; Auto Gated Clock Conversion                                                ; Off                 ; Off                 ;
+; Block Design Naming                                                        ; Auto                ; Auto                ;
+; SDC constraint protection                                                  ; Off                 ; Off                 ;
+; Synthesis Effort                                                           ; Auto                ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                  ; On                  ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                 ; Off                 ;
+; Analysis & Synthesis Message Level                                         ; Medium              ; Medium              ;
+; Disable Register Merging Across Hierarchies                                ; Auto                ; Auto                ;
+; Resource Aware Inference For Block RAM                                     ; On                  ; On                  ;
+; Synthesis Seed                                                             ; 1                   ; 1                   ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------+---------+
+; ethernet_controller.sv           ; yes             ; User SystemVerilog HDL File  ; /home/jimi/git/verilog/ethernet/ethernet_controller.sv ;         ;
+; defs.sv                          ; yes             ; User SystemVerilog HDL File  ; /home/jimi/git/verilog/ethernet/defs.sv                ;         ;
+; dm9000a.sv                       ; yes             ; User SystemVerilog HDL File  ; /home/jimi/git/verilog/ethernet/dm9000a.sv             ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 1,675    ;
+;                                             ;          ;
+; Total combinational functions               ; 1224     ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 709      ;
+;     -- 3 input functions                    ; 179      ;
+;     -- <=2 input functions                  ; 336      ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 991      ;
+;     -- arithmetic mode                      ; 233      ;
+;                                             ;          ;
+; Total registers                             ; 583      ;
+;     -- Dedicated logic registers            ; 583      ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 40       ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 583      ;
+; Total fan-out                               ; 5753     ;
+; Average fan-out                             ; 3.11     ;
++---------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                          ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+--------------+
+; |ethernet_controller       ; 1224 (495)        ; 583 (581)    ; 0           ; 0            ; 0       ; 0         ; 40   ; 0            ; |ethernet_controller                 ;              ;
+;    |dm9000a:DM9000A|       ; 729 (729)         ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ethernet_controller|dm9000a:DM9000A ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                            ;
++------------------------------------------------------+--------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal            ; Free of Timing Hazards ;
++------------------------------------------------------+--------------------------------+------------------------+
+; dm9000a:DM9000A|data[0]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[1]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[2]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[3]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[4]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[5]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[6]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[7]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[8]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[9]                              ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[10]                             ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[11]                             ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[12]                             ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[13]                             ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[14]                             ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|data[15]                             ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|cmd                                  ; dm9000a:DM9000A|Selector68     ; yes                    ;
+; dm9000a:DM9000A|wr                                   ; dm9000a:DM9000A|Selector84     ; yes                    ;
+; dm9000a:DM9000A|rst                                  ; dm9000a:DM9000A|Equal9         ; yes                    ;
+; dm9000a:DM9000A|state_machine[3]                     ; dm9000a:DM9000A|Selector78     ; yes                    ;
+; dm9000a:DM9000A|state_machine[4]                     ; dm9000a:DM9000A|Selector78     ; yes                    ;
+; dm9000a:DM9000A|state_machine[1]                     ; dm9000a:DM9000A|Selector28     ; yes                    ;
+; dm9000a:DM9000A|state_machine[0]                     ; dm9000a:DM9000A|Selector28     ; yes                    ;
+; dm9000a:DM9000A|state_machine[2]                     ; dm9000a:DM9000A|Selector78     ; yes                    ;
+; dm9000a:DM9000A|data_index[1]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[0]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[3]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[2]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[4]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[5]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|write_counter[30]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[29]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[28]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[27]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[26]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[25]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[24]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[23]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[22]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[21]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[20]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[19]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[18]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[17]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[16]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[15]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[14]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[13]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[12]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[11]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[10]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[9]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[8]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[7]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[6]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[5]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[4]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[3]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[2]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[1]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[0]                     ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|write_counter[31]                    ; dm9000a:DM9000A|Selector20     ; yes                    ;
+; dm9000a:DM9000A|data_index[31]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[30]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[29]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[28]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[27]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[26]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[25]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[24]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[23]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[22]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[21]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[20]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[19]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[18]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[17]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[16]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[15]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[14]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[13]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[12]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[11]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[10]                       ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[9]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[8]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[7]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|data_index[6]                        ; dm9000a:DM9000A|data_index[31] ; yes                    ;
+; dm9000a:DM9000A|tick_counter[4]                      ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[5]                      ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[6]                      ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[7]                      ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[8]                      ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[9]                      ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[10]                     ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[11]                     ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[12]                     ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[13]                     ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[14]                     ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; dm9000a:DM9000A|tick_counter[2]                      ; dm9000a:DM9000A|Selector32     ; yes                    ;
+; Number of user-specified and inferred latches = 120  ;                                ;                        ;
++------------------------------------------------------+--------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; packet_state[4..31]                    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 28 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 583   ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 520   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; place[3]                               ; 93      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 16:1               ; 31 bits   ; 310 LEs       ; 31 LEs               ; 279 LEs                ; Yes        ; |ethernet_controller|place[13]                  ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; Yes        ; |ethernet_controller|packet[0][0]               ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; Yes        ; |ethernet_controller|packet[1][13]              ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; Yes        ; |ethernet_controller|packet[2][13]              ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; Yes        ; |ethernet_controller|packet[3][0]               ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[4][0]               ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[5][0]               ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[6][0]               ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[7][0]               ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[8][13]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[9][13]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[10][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[11][1]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[12][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[13][1]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[14][1]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[15][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[16][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[17][0]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[18][1]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[19][0]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[20][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[21][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[22][1]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[23][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[24][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[25][1]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[26][1]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[27][1]              ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[28][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[29][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[30][13]             ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |ethernet_controller|packet[31][13]             ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ethernet_controller|packet[0][7]               ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ethernet_controller|packet[1][15]              ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ethernet_controller|packet[2][15]              ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ethernet_controller|packet[3][15]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[4][14]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[5][14]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[6][14]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[7][15]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[8][7]               ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[9][15]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[10][15]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[11][14]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[12][4]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[13][7]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[14][15]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[15][15]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[16][7]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[17][15]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[18][4]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[19][4]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[20][7]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[21][14]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[22][14]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[23][7]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[24][7]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[25][7]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[26][15]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[27][7]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[28][15]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[29][15]             ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[30][7]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 8 LEs                ; 36 LEs                 ; Yes        ; |ethernet_controller|packet[31][7]              ;
+; 12:1               ; 5 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |ethernet_controller|packet[0][6]               ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ethernet_controller|packet[0][2]               ;
+; 12:1               ; 5 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |ethernet_controller|packet[1][9]               ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ethernet_controller|packet[1][2]               ;
+; 12:1               ; 5 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |ethernet_controller|packet[2][10]              ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ethernet_controller|packet[2][3]               ;
+; 12:1               ; 5 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |ethernet_controller|packet[3][6]               ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |ethernet_controller|packet[3][3]               ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[4][12]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[4][3]               ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[5][11]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[5][2]               ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[6][12]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[6][2]               ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[7][10]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[7][3]               ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[8][11]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[8][3]               ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[9][10]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[9][3]               ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[10][11]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[10][3]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[11][11]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[11][3]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[12][9]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[12][3]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[13][11]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[13][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[14][10]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[14][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[15][9]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[15][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[16][12]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[16][3]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[17][6]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[17][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[18][10]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[18][5]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[19][11]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[19][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[20][11]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[20][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[21][9]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[21][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[22][10]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[22][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[23][12]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[23][5]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[24][11]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[24][5]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[25][12]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[25][5]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[26][12]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[26][5]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[27][12]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[27][3]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[28][6]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[28][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[29][6]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[29][2]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[30][9]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[30][3]              ;
+; 19:1               ; 5 bits    ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |ethernet_controller|packet[31][9]              ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |ethernet_controller|packet[31][3]              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |ethernet_controller|ShiftRight1                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |ethernet_controller|ShiftRight0                ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |ethernet_controller|dm9000a:DM9000A|Selector56 ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 4 LEs                ; 38 LEs                 ; No         ; |ethernet_controller|dm9000a:DM9000A|Selector84 ;
+; 64:1               ; 8 bits    ; 336 LEs       ; 176 LEs              ; 160 LEs                ; No         ; |ethernet_controller|dm9000a:DM9000A|Mux7       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |ethernet_controller|dm9000a:DM9000A|Selector62 ;
+; 85:1               ; 8 bits    ; 448 LEs       ; 280 LEs              ; 168 LEs                ; No         ; |ethernet_controller|dm9000a:DM9000A|Selector14 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ethernet_controller ;
++----------------+------------------+-------------------------------------------------+
+; Parameter Name ; Value            ; Type                                            ;
++----------------+------------------+-------------------------------------------------+
+; packetLength   ; 0000000000100000 ; Unsigned Binary                                 ;
++----------------+------------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dm9000a:DM9000A ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; Low            ; 1     ; Unsigned Binary                     ;
+; High           ; 0     ; Unsigned Binary                     ;
+; Data           ; 1     ; Unsigned Binary                     ;
+; Index          ; 0     ; Unsigned Binary                     ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "dm9000a:DM9000A"            ;
++----------------------+-------+----------+--------------+
+; Port                 ; Type  ; Severity ; Details      ;
++----------------------+-------+----------+--------------+
+; packet_length[15..6] ; Input ; Info     ; Stuck at GND ;
+; packet_length[4..0]  ; Input ; Info     ; Stuck at GND ;
+; packet_length[5]     ; Input ; Info     ; Stuck at VCC ;
++----------------------+-------+----------+--------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Fri Apr 10 15:46:55 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ethernet_controller -c ethernet_controller
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file ethernet_controller.sv
+    Info (12023): Found entity 1: ethernet_controller
+Info (12021): Found 1 design units, including 0 entities, in source file defs.sv
+    Info (12022): Found design unit 1: ProtocolInfo (SystemVerilog)
+Info (12021): Found 1 design units, including 1 entities, in source file dm9000a.sv
+    Info (12023): Found entity 1: dm9000a
+Info (12127): Elaborating entity "ethernet_controller" for the top level hierarchy
+Warning (10858): Verilog HDL warning at ethernet_controller.sv(24): object packet used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at ethernet_controller.sv(30): object "place" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at ethernet_controller.sv(31): object "packet_state" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at ethernet_controller.sv(83): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at ethernet_controller.sv(90): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at ethernet_controller.sv(97): truncated value with size 32 to match size of target (16)
+Warning (10764): Verilog HDL warning at ethernet_controller.sv(138): converting signed shift amount to unsigned
+Warning (10230): Verilog HDL assignment warning at ethernet_controller.sv(138): truncated value with size 48 to match size of target (16)
+Warning (10764): Verilog HDL warning at ethernet_controller.sv(151): converting signed shift amount to unsigned
+Warning (10230): Verilog HDL assignment warning at ethernet_controller.sv(151): truncated value with size 48 to match size of target (16)
+Warning (10762): Verilog HDL Case Statement warning at ethernet_controller.sv(48): can't check case statement for completeness because the case expression has too many possible states
+Info (12128): Elaborating entity "dm9000a" for hierarchy "dm9000a:DM9000A"
+Warning (10036): Verilog HDL or VHDL warning at dm9000a.sv(28): object "write_counter" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at dm9000a.sv(35): object "cs" assigned a value but never read
+Warning (10762): Verilog HDL Case Statement warning at dm9000a.sv(153): can't check case statement for completeness because the case expression has too many possible states
+Warning (10240): Verilog HDL Always Construct warning at dm9000a.sv(152): inferring latch(es) for variable "rst", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at dm9000a.sv(152): inferring latch(es) for variable "tick_counter", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at dm9000a.sv(152): inferring latch(es) for variable "state_machine", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at dm9000a.sv(152): inferring latch(es) for variable "data", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at dm9000a.sv(152): inferring latch(es) for variable "cmd", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at dm9000a.sv(152): inferring latch(es) for variable "rd", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at dm9000a.sv(152): inferring latch(es) for variable "wr", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at dm9000a.sv(152): inferring latch(es) for variable "write_counter", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at dm9000a.sv(152): inferring latch(es) for variable "data_index", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "data_index[0]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[1]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[2]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[3]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[4]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[5]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[6]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[7]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[8]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[9]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[10]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[11]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[12]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[13]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[14]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[15]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[16]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[17]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[18]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[19]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[20]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[21]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[22]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[23]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[24]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[25]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[26]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[27]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[28]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[29]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[30]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data_index[31]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[0]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[1]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[2]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[3]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[4]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[5]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[6]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[7]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[8]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[9]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[10]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[11]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[12]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[13]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[14]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[15]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[16]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[17]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[18]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[19]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[20]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[21]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[22]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[23]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[24]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[25]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[26]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[27]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[28]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[29]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[30]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "write_counter[31]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "wr" at dm9000a.sv(152)
+Info (10041): Inferred latch for "rd" at dm9000a.sv(152)
+Info (10041): Inferred latch for "cmd" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[0]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[1]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[2]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[3]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[4]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[5]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[6]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[7]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[8]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[9]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[10]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[11]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[12]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[13]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[14]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "data[15]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[0]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[1]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[2]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[3]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[4]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[5]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[6]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[7]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[8]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[9]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[10]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[11]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[12]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[13]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[14]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[15]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[16]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[17]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[18]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[19]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[20]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[21]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[22]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[23]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[24]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[25]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[26]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[27]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[28]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[29]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[30]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "state_machine[31]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[0]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[1]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[2]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[3]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[4]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[5]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[6]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[7]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[8]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[9]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[10]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[11]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[12]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[13]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[14]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[15]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[16]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[17]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[18]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[19]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[20]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[21]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[22]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[23]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[24]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[25]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[26]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[27]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[28]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[29]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[30]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "tick_counter[31]" at dm9000a.sv(152)
+Info (10041): Inferred latch for "rst" at dm9000a.sv(152)
+Warning (13012): Latch dm9000a:DM9000A|data[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[4]
+Warning (13012): Latch dm9000a:DM9000A|data[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[3]
+Warning (13012): Latch dm9000a:DM9000A|data[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[3]
+Warning (13012): Latch dm9000a:DM9000A|data[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[0]
+Warning (13012): Latch dm9000a:DM9000A|data[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[4]
+Warning (13012): Latch dm9000a:DM9000A|data[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[4]
+Warning (13012): Latch dm9000a:DM9000A|data[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[4]
+Warning (13012): Latch dm9000a:DM9000A|data[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[4]
+Warning (13012): Latch dm9000a:DM9000A|data[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[5]
+Warning (13012): Latch dm9000a:DM9000A|data[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[5]
+Warning (13012): Latch dm9000a:DM9000A|data[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[5]
+Warning (13012): Latch dm9000a:DM9000A|data[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[5]
+Warning (13012): Latch dm9000a:DM9000A|data[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[5]
+Warning (13012): Latch dm9000a:DM9000A|data[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[5]
+Warning (13012): Latch dm9000a:DM9000A|data[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[5]
+Warning (13012): Latch dm9000a:DM9000A|data[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[5]
+Warning (13012): Latch dm9000a:DM9000A|cmd has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[0]
+Warning (13012): Latch dm9000a:DM9000A|wr has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|write_counter[30]
+Warning (13012): Latch dm9000a:DM9000A|state_machine[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[4]
+Warning (13012): Latch dm9000a:DM9000A|state_machine[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[0]
+Warning (13012): Latch dm9000a:DM9000A|state_machine[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[0]
+Warning (13012): Latch dm9000a:DM9000A|state_machine[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[1]
+Warning (13012): Latch dm9000a:DM9000A|state_machine[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[0]
+Warning (13012): Latch dm9000a:DM9000A|data_index[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[31]
+Warning (13012): Latch dm9000a:DM9000A|data_index[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|data_index[31]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|write_counter[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|state_machine[2]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[6] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[10] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[11] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[12] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[13] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[14] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[15] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[16] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[17] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[18] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[19] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[20] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[21] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[22] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[23] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[24] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[25] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[26] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[27] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[28] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[29] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[30] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13012): Latch dm9000a:DM9000A|tick_counter[31] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal dm9000a:DM9000A|tick_counter[4]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ENET_CS_N" is stuck at GND
+    Warning (13410): Pin "ENET_RD_N" is stuck at VCC
+Info (144001): Generated suppressed messages file /home/jimi/git/verilog/ethernet/output_files/ethernet_controller.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1744 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 1704 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 205 warnings
+    Info: Peak virtual memory: 350 megabytes
+    Info: Processing ended: Fri Apr 10 15:47:00 2015
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/jimi/git/verilog/ethernet/output_files/ethernet_controller.map.smsg.
+
+

@@ -6,142 +6,166 @@ cModel Technology
 dC:\Users\jimi\Documents\GitHub\verilog\ethernet
 vdm9000a
 Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z1 DXx4 work 12 ProtocolInfo 0 22 CYQj_Sfalg[[f821<XF;n2
-DXx4 work 15 dm9000a_sv_unit 0 22 _lUbhkdU]NH7l47=X0BP11
-Z2 V`JN@9S9cnhjKRR_L]QIcM3
+Z1 DXx4 work 12 ProtocolInfo 0 22 iWQUD@U?<UM;FQW713m>c1
+Z2 DXx4 work 15 dm9000a_sv_unit 0 22 WN<7g1QBK?EQYXCNWU8ni1
+Z3 V`JN@9S9cnhjKRR_L]QIcM3
 r1
 !s85 0
 31
 !i10b 1
-!s100 S1E:LB<bFE0h2z1Yj:a6K3
-IW8D_<BPbMc02nKeM;6g0Z2
-!s105 dm9000a_sv_unit
+!s100 Om@b7mH;0G@8:XXYLOH;z2
+I?5`m1HVDHa]P0TF7?lYBR1
+Z4 !s105 dm9000a_sv_unit
 S1
-Z3 d/home/jimi/git/verilog/ethernet
-Z4 w1428702453
-Z5 8/home/jimi/git/verilog/ethernet/dm9000a.sv
-Z6 F/home/jimi/git/verilog/ethernet/dm9000a.sv
-L0 6
-Z7 OV;L;10.3c;59
-Z8 !s108 1428702930.121695
-Z9 !s107 /home/jimi/git/verilog/ethernet/dm9000a.sv|
-Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/dm9000a.sv|
+Z5 d/home/jimi/git/verilog/ethernet
+Z6 w1429035461
+Z7 8/home/jimi/git/verilog/ethernet/dm9000a.sv
+Z8 F/home/jimi/git/verilog/ethernet/dm9000a.sv
+L0 65
+Z9 OV;L;10.3c;59
+Z10 !s108 1429035811.682110
+Z11 !s107 /home/jimi/git/verilog/ethernet/dm9000a.sv|
+Z12 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/dm9000a.sv|
 !i113 1
-Z11 o-work work -sv
+Z13 o-work work -sv
 Xdm9000a_sv_unit
 R0
 R1
-V_lUbhkdU]NH7l47=X0BP11
+VWN<7g1QBK?EQYXCNWU8ni1
 r1
 !s85 0
 31
 !i10b 1
-!s100 [ngDlfQH2X`Fz=0j3Ih4B2
-I_lUbhkdU]NH7l47=X0BP11
+!s100 k_U`Bk[M;A4>9<Bfk_Ro=0
+IWN<7g1QBK?EQYXCNWU8ni1
 !i103 1
 S1
-R3
-R4
 R5
 R6
-L0 2
 R7
 R8
+L0 2
 R9
 R10
-!i113 1
 R11
+R12
+!i113 1
+R13
+vdm_write
+R0
+R1
+R2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 EkfHYbXHUZk3J_?mNcQ@71
+I:E@N5[VInmoF9a0CX?aC?1
+R4
+S1
+R5
+R6
+R7
+R8
+L0 11
+R9
+R10
+R11
+R12
+!i113 1
+R13
 vethernet_controller
 R0
 R1
-Z12 DXx4 work 27 ethernet_controller_sv_unit 0 22 TTdmkYPDR^aCCLjTTe_B23
-R2
+Z14 DXx4 work 27 ethernet_controller_sv_unit 0 22 PFOWF;=3ZE[ahVVc0eW<>0
+R3
 r1
 !s85 0
 31
 !i10b 1
-!s100 RGYjg655h4h>Q21iX6H6<2
-Im3lK0==f>?LHoo[lG_NaQ0
-Z13 !s105 ethernet_controller_sv_unit
+!s100 dALn=gT5o9MIL1XE:OiRn1
+InLkPU3Zfi=:N=_nh1DME42
+Z15 !s105 ethernet_controller_sv_unit
 S1
-R3
-Z14 w1428702926
-Z15 8/home/jimi/git/verilog/ethernet/ethernet_controller.sv
-Z16 F/home/jimi/git/verilog/ethernet/ethernet_controller.sv
-L0 8
-R7
-Z17 !s108 1428702930.094937
-Z18 !s107 /home/jimi/git/verilog/ethernet/ethernet_controller.sv|
-Z19 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/ethernet_controller.sv|
+R5
+Z16 w1429035808
+Z17 8/home/jimi/git/verilog/ethernet/ethernet_controller.sv
+Z18 F/home/jimi/git/verilog/ethernet/ethernet_controller.sv
+L0 5
+R9
+Z19 !s108 1429035811.655095
+Z20 !s107 /home/jimi/git/verilog/ethernet/ethernet_controller.sv|
+Z21 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/ethernet_controller.sv|
 !i113 1
-R11
+R13
 Xethernet_controller_sv_unit
 R0
 R1
-VTTdmkYPDR^aCCLjTTe_B23
+VPFOWF;=3ZE[ahVVc0eW<>0
 r1
 !s85 0
 31
 !i10b 1
-!s100 @FNV[^[@z<V8laPC=KTcz1
-ITTdmkYPDR^aCCLjTTe_B23
+!s100 ]bfH@XiAk?GPg3^okAN`B1
+IPFOWF;=3ZE[ahVVc0eW<>0
 !i103 1
 S1
-R3
-R14
-R15
+R5
 R16
-L0 1
-R7
 R17
 R18
+L0 1
+R9
 R19
+R20
+R21
 !i113 1
-R11
+R13
 XProtocolInfo
 R0
-!s110 1428702930
+!s110 1429035811
 !i10b 1
-!s100 YO@zo`dJXT0a14l`BY5333
-ICYQj_Sfalg[[f821<XF;n2
-VCYQj_Sfalg[[f821<XF;n2
+!s100 hzKUlaU8IF[@ERZ8N78CD3
+IiWQUD@U?<UM;FQW713m>c1
+ViWQUD@U?<UM;FQW713m>c1
 S1
-R3
-w1428435457
+R5
+w1428888280
 8/home/jimi/git/verilog/ethernet/defs.sv
 F/home/jimi/git/verilog/ethernet/defs.sv
 L0 1
-R7
+R9
 r1
 !s85 0
 31
-!s108 1428702930.148241
+!s108 1429035811.718115
 !s107 /home/jimi/git/verilog/ethernet/defs.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/jimi/git/verilog/ethernet/defs.sv|
 !i113 1
-R11
+R13
 n@protocol@info
 vtestbench
 R0
 R1
-R12
-R2
+R14
+R3
 r1
 !s85 0
 31
 !i10b 1
-!s100 0adR@SSeY?bSkRgS=E<8^1
-I@6GP_>i9Jm5VW@<JBVL?g3
-R13
-S1
-R3
-R14
+!s100 HN^X4zj91CI?S?jhHj<e:2
+IU^33CDeFCC>n>Aak@NEa02
 R15
+S1
+R5
 R16
-L0 213
-R7
 R17
 R18
+L0 212
+R9
 R19
+R20
+R21
 !i113 1
-R11
+R13

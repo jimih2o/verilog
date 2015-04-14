@@ -2,25 +2,9 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'dm9000a:DM9000A|state_machine[0]'
-Slack : -8.456
-TNS   : -585.513
-
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -7.893
-TNS   : -3998.773
-
-Type  : Slow Model Setup 'dm9000a:DM9000A|data_index[0]'
-Slack : -6.352
-TNS   : -335.280
-
-Type  : Slow Model Hold 'dm9000a:DM9000A|state_machine[0]'
-Slack : -12.742
-TNS   : -309.336
-
-Type  : Slow Model Hold 'dm9000a:DM9000A|data_index[0]'
-Slack : -8.669
-TNS   : -264.356
+Slack : -7.911
+TNS   : -4565.188
 
 Type  : Slow Model Hold 'CLOCK_50'
 Slack : 0.391
@@ -28,35 +12,11 @@ TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
 Slack : -1.380
-TNS   : -584.380
-
-Type  : Slow Model Minimum Pulse Width 'dm9000a:DM9000A|state_machine[0]'
-Slack : 0.148
-TNS   : 0.000
-
-Type  : Slow Model Minimum Pulse Width 'dm9000a:DM9000A|data_index[0]'
-Slack : 0.500
-TNS   : 0.000
-
-Type  : Fast Model Setup 'dm9000a:DM9000A|state_machine[0]'
-Slack : -3.466
-TNS   : -215.247
+TNS   : -751.380
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : -3.161
-TNS   : -1557.595
-
-Type  : Fast Model Setup 'dm9000a:DM9000A|data_index[0]'
-Slack : -2.536
-TNS   : -113.466
-
-Type  : Fast Model Hold 'dm9000a:DM9000A|state_machine[0]'
-Slack : -6.278
-TNS   : -159.214
-
-Type  : Fast Model Hold 'dm9000a:DM9000A|data_index[0]'
-Slack : -4.287
-TNS   : -126.055
+Slack : -3.054
+TNS   : -1701.487
 
 Type  : Fast Model Hold 'CLOCK_50'
 Slack : 0.215
@@ -64,14 +24,6 @@ TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
 Slack : -1.380
-TNS   : -584.380
-
-Type  : Fast Model Minimum Pulse Width 'dm9000a:DM9000A|state_machine[0]'
-Slack : 0.352
-TNS   : 0.000
-
-Type  : Fast Model Minimum Pulse Width 'dm9000a:DM9000A|data_index[0]'
-Slack : 0.500
-TNS   : 0.000
+TNS   : -751.380
 
 ------------------------------------------------------------

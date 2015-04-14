@@ -23,6 +23,13 @@ parameter IPcs3 = ~((IPcs2 & 32'h0000FFFF) + (IPcs2 >> 16)) ;
 
 parameter IP_CheckSum = IPcs3 ;
 
-parameter UDP_Port = 8000 ;
+parameter UDP_Port = 16'd8000 ;
+
+// \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ // \\ //
+/// Parameters for dm9000a
+parameter Low = 1'b1 ;
+parameter High = 1'b0 ;
+parameter Data = 1'b1 ;
+parameter Index = 1'b0 ;
 
 endpackage
